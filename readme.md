@@ -3,6 +3,6 @@
 
   SDK:https://labs.mediatek.com/zh-cn/download/Cobne0ON
 
-
-
   libaroma: https://github.com/amarullz/libaroma
+  
+  libaroma GUI 分析请参考本人博客:http://ever-never.github.io/2016/08/28/Libaroma-GUI/
