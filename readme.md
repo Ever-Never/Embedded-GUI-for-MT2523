@@ -7,9 +7,8 @@
   3. 大部分内置控件都在2523 上面可以使用.
   4. window 专场动画支持,支持平移,覆盖等多种形式的动画.
   5. 文字排版支持居中方式和CSS标签
-
+  
 #### 内置控件列表
-
   1. label 文本框
   2. image 图片框,支持帧动画
   3. progress 进度条,长方形和圆形进度条,loading.
@@ -19,6 +18,12 @@
   7. scroller.
   8. qrcode 二维码
   
+#### build
+
+只是支持GCC编译,keil下编译请自行参考makefile添加文件
+
+    cd project/mt2523_hdk/apps/gdi_display_helloworld/GCC
+    make
 
   SDK:https://labs.mediatek.com/zh-cn/download/Cobne0ON
 
