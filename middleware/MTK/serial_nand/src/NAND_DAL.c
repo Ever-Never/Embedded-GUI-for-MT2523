@@ -71,7 +71,8 @@ static void *kal_mem_set(void *dest, int32_t value, uint32_t size)
 static int32_t kal_mem_cmp(const void *src1, const void *src2, uint32_t size)
 {
     //return memcmp ( src1, src2, size );
-    const unsigned char *p1 = src1, *p2 = src2;
+    const unsigned char *p1 = src1;
+    const unsigned char *p2 = src2;
     if (size == 0) {
         return 0;
     }
