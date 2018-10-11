@@ -33,6 +33,11 @@
 #### 截图
 
 ![](https://github.com/Ever-Never/Embedded-GUI-for-MT2523/blob/master/pics/2018-10-11%2013-08-45.png)
+![](https://github.com/Ever-Never/Embedded-GUI-for-MT2523/blob/master/pics/2018-10-11%2013-11-44.png)
+![](https://github.com/Ever-Never/Embedded-GUI-for-MT2523/blob/master/pics/2018-10-11%2013-11-28.png)
+![](https://github.com/Ever-Never/Embedded-GUI-for-MT2523/blob/master/pics/2018-10-11%2013-09-59.png)
+![](https://github.com/Ever-Never/Embedded-GUI-for-MT2523/blob/master/pics/2018-10-11%2013-10-47.png)
+
 
 
   SDK:https://labs.mediatek.com/zh-cn/download/Cobne0ON
