@@ -14,7 +14,7 @@
         <TargetCommonOption>
           <Device>MT2523x</Device>
           <Vendor>MediaTek</Vendor>
-          <PackID>MediaTek.MTx.4.6.1</PackID>
+          <PackID>MediaTek.MTx.4.6.0</PackID>
           <PackURL>http://download.labs.mediatek.com</PackURL>
           <Cpu>IROM(0x08000000,0x00400000) IRAM(0x00000000,0x00400000) IRAM2(0x04008000,0x00020000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>

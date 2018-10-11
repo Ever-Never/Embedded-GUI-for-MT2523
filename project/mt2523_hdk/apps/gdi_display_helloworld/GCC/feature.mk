@@ -16,6 +16,9 @@ MTK_SMART_BATTERY_ENABLE = y
 # debug level: none, error, warning, and info
 MTK_DEBUG_LEVEL = info
 
+# CTP module on
+MTK_CTP_ENABLE = y
+
 # bt module enable
 MTK_BT_ENABLE                       = y
 MTK_BLE_ONLY_ENABLE                 = n

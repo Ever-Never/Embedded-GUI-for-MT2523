@@ -116,7 +116,8 @@ extern "C" {
  *  * Choose one system frequency of MCU from 208M or 104M or 26M
  *   */
 /* #define  MTK_SYSTEM_CLOCK_208M */
-#define  MTK_SYSTEM_CLOCK_104M
+#define  MTK_SYSTEM_CLOCK_208M
+//#define  MTK_SYSTEM_CLOCK_104M
 /* #define  MTK_SYSTEM_CLOCK_26M */
 #endif/*HAL_CLOCK_MODULE_ENABLED*/
 

@@ -109,6 +109,24 @@ include $(SOURCE_DIR)/middleware/MTK/bluetooth/module.mk
 #gdi files
 include $(SOURCE_DIR)/middleware/MTK/gdi/module.mk
 
+
+# FatFS source files
+include $(SOURCE_DIR)/middleware/third_party/fatfs/module.mk
+
+#include $(SOURCE_DIR)/middleware/third_party/zlib/module.mk
+
+# LIBPNG source files
+#include $(SOURCE_DIR)/middleware/third_party/libpng/module.mk
+
+# G2D source files
+#include $(SOURCE_DIR)/middleware/MTK/g2d/module.mk
+
+
+
+CFLAGS += -I$(SOURCE_DIR)/middleware/third_party/fatfs/src
+
+-include module_libaroma.mk
+
 ###################################################
 # Main APP files
 
@@ -122,7 +140,15 @@ APP_PATH_SRC = $(APP_PATH)/src
 
 APP_FILES = $(APP_PATH_SRC)/main.c \
             $(APP_PATH_SRC)/regions_init.c \
+	   		$(APP_PATH_SRC)/libaroma_test_graphonly.c\
+			$(APP_PATH_SRC)/clock_test.c \
+			$(APP_PATH_SRC)/sport_test.c \
+			$(APP_PATH_SRC)/png_res.c \
+			$(APP_PATH_SRC)/resource.c \
+			$(APP_PATH_SRC)/freetype_font_ttf.c \
             $(APP_PATH)/GCC/syscalls.c
+
+#			$(APP_PATH_SRC)/freetype_font_ttf.c\
 
 APP_FILES += $(APP_PATH_SRC)/ept_gpio_var.c
 APP_FILES += $(APP_PATH_SRC)/ept_eint_var.c
@@ -143,6 +169,10 @@ APP_FILES += $(APP_PATH_SRC)/custom_image_data_resource.c \
 APP_FILES += $(APP_PATH_SRC)/main_screen.c
 APP_FILES += $(APP_PATH_SRC)/ui_demo_task.c
 
+# msg map
+
+APP_FILES += $(APP_PATH_SRC)/MessageMapQueue/message_map_queue.c
+
 C_FILES += $(APP_FILES)
 
 # add startup file to build
@@ -152,6 +182,7 @@ S_FILES += $(APP_PATH)/GCC/startup_mt2523.s
 # include path
 
 CFLAGS += -I$(SOURCE_DIR)/$(APP_PATH)/inc
+CFLAGS += -I$(SOURCE_DIR)/$(APP_PATH)/inc/MessageMapQueue
 CFLAGS += -I$(SOURCE_DIR)/driver/CMSIS/Include
 CFLAGS += -I$(SOURCE_DIR)/driver/CMSIS/Device/MTK/mt2523/Include
 CFLAGS += -I$(SOURCE_DIR)/driver/chip/mt2523/inc
@@ -161,6 +192,10 @@ CFLAGS += -I$(SOURCE_DIR)/kernel/service/inc
 CFLAGS += -I$(SOURCE_DIR)/driver/board/mt25x3_hdk/ept/inc
 
 CFLAGS += -I$(SOURCE_DIR)/driver/board/mt25x3_hdk/backlight
+
+CFLAGS  += -I$(SOURCE_DIR)/kernel/rtos/FreeRTOS/include
+CFLAGS  += -I$(SOURCE_DIR)/kernel/rtos/FreeRTOS/Source/include 
+CFLAGS  += -I$(SOURCE_DIR)/kernel/rtos/FreeRTOS/Source/include/portable/GCC/ARM_CM4F
 
 ###################################################
 # Rules

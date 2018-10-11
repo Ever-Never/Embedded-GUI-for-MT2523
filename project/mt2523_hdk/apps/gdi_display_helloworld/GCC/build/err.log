@@ -1,0 +1,876 @@
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c: In function 'libaroma_motion_fluid':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:65:8: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   if (t<1.0){
+        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:67:10: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     if (t<1.0) {
+          ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:68:17: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+       t -= (1.0 - (float) exp(-t));
+                 ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:68:9: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+       t -= (1.0 - (float) exp(-t));
+         ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:71:24: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+       t = 1.0 - exp(1.0-t);
+                        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:72:28: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+       t = start + t * (1.0 - start);
+                            ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:72:21: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+       t = start + t * (1.0 - start);
+                     ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:72:17: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+       t = start + t * (1.0 - start);
+                 ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:74:14: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     t+=(0.002*t);
+              ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:74:6: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     t+=(0.002*t);
+      ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c: In function 'libaroma_motion_decelerate':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:91:26: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   return (float)(1.0-(1.0-t)*(1.0-t));
+                          ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:91:34: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   return (float)(1.0-(1.0-t)*(1.0-t));
+                                  ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c: In function 'libaroma_ripple_thread':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:185:34: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+           if ((me->touch_state[i]>=0.7)&&(!me->holded)){
+                                  ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:191:33: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+           if (me->touch_state[i]>=0.12){
+                                 ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c: In function 'libaroma_ripple_calculation':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:332:32: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     float tstate    = cbz_state*7.5;
+                                ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:335:24: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+       cbz_state += (1.0-cbz_state) * me->release_state[pos];
+                        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:335:36: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+       cbz_state += (1.0-cbz_state) * me->release_state[pos];
+                                    ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:335:17: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+       cbz_state += (1.0-cbz_state) * me->release_state[pos];
+                 ^
+In file included from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma_internal.h:42:0,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:26:
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:336:70: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+       ropa-= (me->release_state[pos]<1)?(MAX(0,me->release_state[pos]-0.2)*1.25):1;
+                                                                      ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/fallbacks.h:35:27: note: in definition of macro 'MAX'
+   #define MAX(a,b) (((a)>(b))?(a):(b))
+                           ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:336:70: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+       ropa-= (me->release_state[pos]<1)?(MAX(0,me->release_state[pos]-0.2)*1.25):1;
+                                                                      ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/fallbacks.h:35:36: note: in definition of macro 'MAX'
+   #define MAX(a,b) (((a)>(b))?(a):(b))
+                                    ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/motions.c:336:11: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+       ropa-= (me->release_state[pos]<1)?(MAX(0,me->release_state[pos]-0.2)*1.25):1;
+           ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/stream.c: In function 'libaroma_stream_file':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/stream.c:90:15: warning: extra tokens at end of #ifdef directive [enabled by default]
+ #ifdef define RTOS_FILE
+               ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/strings.c: In function 'libaroma_stristr':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/strings.c:57:5: warning: array subscript has type 'char' [-Wchar-subscripts]
+     if (tolower(ch1[i])==tolower(ch2[j])){
+     ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/strings.c:57:5: warning: array subscript has type 'char' [-Wchar-subscripts]
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/system.c: In function 'libaroma_getprop':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/system.c:42:3: warning: array subscript has type 'char' [-Wchar-subscripts]
+   while (*line && isspace(*line)) {
+   ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/system.c:53:3: warning: array subscript has type 'char' [-Wchar-subscripts]
+   while (key_end > line && isspace(*key_end)) {
+   ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/system.c:61:3: warning: array subscript has type 'char' [-Wchar-subscripts]
+   while (*val_start && isspace(*val_start)) {
+   ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/utils/system.c:65:3: warning: array subscript has type 'char' [-Wchar-subscripts]
+   while (val_end > val_start && isspace(*val_end)) {
+   ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/artworker.c: In function '_libaroma_art_arrowdrawer_line':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/artworker.c:74:15: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   int pos = (t<=0.5)?0:8;
+               ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/artworker.c:75:8: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   if (t<=0.5){
+        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/artworker.c:79:9: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     t=(t-0.5) * 2;
+         ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/artworker.c:96:34: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float scaling = ((float) size) / 240.0;
+                                  ^
+In file included from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg.c:32:0:
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h: In function 'nsvg__xformInverse':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:502:36: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+  double invdet, det = (double)t[0] * t[3] - (double)t[2] * t[1];
+                                    ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:502:58: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+  double invdet, det = (double)t[0] * t[3] - (double)t[2] * t[1];
+                                                          ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:508:24: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+  inv[0] = (float)(t[3] * invdet);
+                        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:509:25: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+  inv[2] = (float)(-t[2] * invdet);
+                         ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:510:33: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+  inv[4] = (float)(((double)t[2] * t[5] - (double)t[3] * t[4]) * invdet);
+                                 ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:510:55: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+  inv[4] = (float)(((double)t[2] * t[5] - (double)t[3] * t[4]) * invdet);
+                                                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:511:25: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+  inv[1] = (float)(-t[1] * invdet);
+                         ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:512:24: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+  inv[3] = (float)(t[0] * invdet);
+                        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:513:33: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+  inv[5] = (float)(((double)t[1] * t[4] - (double)t[0] * t[5]) * invdet);
+                                 ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:513:55: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+  inv[5] = (float)(((double)t[1] * t[4] - (double)t[0] * t[5]) * invdet);
+                                                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h: In function 'nsvg__curveBounds':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:572:12: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   a = -3.0 * v0[i] + 9.0 * v1[i] - 9.0 * v2[i] + 3.0 * v3[i];
+            ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:572:26: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   a = -3.0 * v0[i] + 9.0 * v1[i] - 9.0 * v2[i] + 3.0 * v3[i];
+                          ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:572:40: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   a = -3.0 * v0[i] + 9.0 * v1[i] - 9.0 * v2[i] + 3.0 * v3[i];
+                                        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:572:54: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   a = -3.0 * v0[i] + 9.0 * v1[i] - 9.0 * v2[i] + 3.0 * v3[i];
+                                                      ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:573:11: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   b = 6.0 * v0[i] - 12.0 * v1[i] + 6.0 * v2[i];
+           ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:573:26: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   b = 6.0 * v0[i] - 12.0 * v1[i] + 6.0 * v2[i];
+                          ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:573:40: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   b = 6.0 * v0[i] - 12.0 * v1[i] + 6.0 * v2[i];
+                                        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:574:11: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   c = 3.0 * v1[i] - 3.0 * v0[i];
+           ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:574:25: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   c = 3.0 * v1[i] - 3.0 * v0[i];
+                         ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h: In function 'nsvg__pathArcTo':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:2003:22: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+  fa = fabsf(args[3]) > 1e-6 ? 1 : 0; // Large arc
+                      ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/svg/nanosvg.h:2004:22: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+  fs = fabsf(args[4]) > 1e-6 ? 1 : 0; // Sweep direction
+                      ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/blur.c: In function '_libaroma_blur_kernel':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/blur.c:38:41: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     float v = sqrtTwoPiTimesRadiusRecip * exp(-x * twoRadiusSquaredRecip);
+                                         ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c: In function 'libaroma_draw_subpixel':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:500:21: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float ht=(tickness-1.0)/2;
+                     ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c: In function 'libaroma_draw_line_width':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:668:26: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float t2sina1 = wd / 2 * sin(angle);
+                          ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:669:26: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float t2cosa1 = wd / 2 * cos(angle);
+                          ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:670:26: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float t2sina2 = wd / 2 * sin(angle);
+                          ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:671:26: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float t2cosa2 = wd / 2 * cos(angle);
+                          ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c: In function '_libaroma_draw_arc_findpoint':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:712:27: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float xt = dx + radius_w*cos(radian);
+                           ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:712:17: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float xt = dx + radius_w*cos(radian);
+                 ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:713:27: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float yt = dy + radius_h*sin(radian);
+                           ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:713:17: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float yt = dy + radius_h*sin(radian);
+                 ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c: In function 'libaroma_draw_arc':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:780:36: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   double start_radian = start_angle* __PI / 180.0;
+                                    ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:781:36: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   double end_radian   = end_angle  * __PI / 180.0;
+                                    ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:782:32: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float start_x = dx + radius_w*cos(start_radian);
+                                ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:782:22: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float start_x = dx + radius_w*cos(start_radian);
+                      ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:783:32: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float start_y = dy + radius_h*sin(start_radian);
+                                ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:783:22: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float start_y = dy + radius_h*sin(start_radian);
+                      ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:784:32: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float end_x   = dx + radius_w*cos(end_radian);
+                                ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:784:22: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float end_x   = dx + radius_w*cos(end_radian);
+                      ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:785:32: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float end_y   = dy + radius_h*sin(end_radian);
+                                ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:785:22: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float end_y   = dy + radius_h*sin(end_radian);
+                      ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:799:28: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     start_x = dx + radius_w*cos(end_radian);
+                            ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:799:18: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     start_x = dx + radius_w*cos(end_radian);
+                  ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:800:28: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     start_y = dy + radius_h*sin(end_radian);
+                            ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:800:18: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     start_y = dy + radius_h*sin(end_radian);
+                  ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:801:28: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     end_x   = dx + radius_w*cos(start_radian);
+                            ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:801:18: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     end_x   = dx + radius_w*cos(start_radian);
+                  ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:802:28: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     end_y   = dy + radius_h*sin(start_radian);
+                            ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/draw/commondraw.c:802:18: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     end_y   = dy + radius_h*sin(start_radian);
+                  ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/engine/color.c: In function 'libaroma_color_hsv':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/engine/color.c:76:26: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float sat = ((float) s)/100.0;
+                          ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/engine/color.c:77:26: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float lum = ((float) v)/100.0;
+                          ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/engine/color.c:80:9: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   if(sat<=0.0){
+         ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/engine/color.c:85:9: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   if(hh >= 360.0){
+         ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/engine/color.c:88:6: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   hh /= 60.0;
+      ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/engine/color.c:91:18: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   p = lum * (1.0 - sat);
+                  ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/engine/color.c:91:11: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   p = lum * (1.0 - sat);
+           ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/engine/color.c:92:18: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   q = lum * (1.0 - (sat * ff));
+                  ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/engine/color.c:92:11: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   q = lum * (1.0 - (sat * ff));
+           ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/engine/color.c:93:32: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   t = lum * (1.0 - (sat * (1.0 - ff)));
+                                ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/engine/color.c:93:25: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   t = lum * (1.0 - (sat * (1.0 - ff)));
+                         ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/engine/color.c:93:11: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   t = lum * (1.0 - (sat * (1.0 - ff)));
+           ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/engine/color.c: In function 'libaroma_color_hue':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/engine/color.c:153:15: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     hue = 2.0 + (blue - red) / (mx - mn);
+               ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/engine/color.c:156:15: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     hue = 4.0 + (red - green) / (mx - mn);
+               ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/debug/compiler_message.c:150:9: warning: junk at end of '#pragma message' [-Wpragmas]
+ #pragma message "\n"\
+         ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/debug/compiler_message.c:150:9: note: #pragma message: 
+======================================================================
+  libaroma Version 1.0.0
+    Build: 150204 - Codename: Asmarandana
+    Copyright (c) 2011-2015 Ahmad Amarullah
+======================================================================
+
+  CONFIGURATIONS:
+  ---------------
+  Platform            : RTOS
+  Debug Level         : ENABLED - 7. Verbose With Raw Events
+                         * WARNING: DONT EVER USE IT ON PRODUCTION
+  Debug with Filename : ENABLED - 2.Filename & Line Number
+  Debug Backtrace     : DISABLED
+  Memory Tracking     : DISABLED
+  FB Driver           : libaroma_fb_driver_init
+  HID Driver          : libaroma_hid_driver_init
+______________________________________________________________________
+
+
+  FEATURES CONFIG:
+  ----------------
+  JPEG Support        : DISABLED
+  Shmem FB            : NOT SHARED
+  Shmem Prefix        : 
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/contrib/platform/rtos/fb_driver.c: In function 'rtos_screen_init':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/contrib/platform/rtos/fb_driver.c:79:3: warning: implicit declaration of function 'bsp_lcd_init' [-Wimplicit-function-declaration]
+   bsp_lcd_init(0xF800);
+   ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/contrib/platform/rtos/fb_driver.c:80:3: warning: implicit declaration of function 'bsp_backlight_init' [-Wimplicit-function-declaration]
+   bsp_backlight_init();
+   ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/contrib/platform/rtos/fb_driver.c:81:3: warning: implicit declaration of function 'bsp_lcd_get_parameter' [-Wimplicit-function-declaration]
+   bsp_lcd_get_parameter(LCM_IOCTRL_QUERY__LCM_HEIGHT, &LCD_WIDTH); // Get the LCD size.
+   ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/fb.c: In function 'libaroma_fb_init':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/fb.c:140:7: warning: implicit declaration of function 'libaroma_canvas_new_array' [-Wimplicit-function-declaration]
+       libaroma_canvas_new_array(
+       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/fb.c:139:29: warning: assignment makes pointer from integer without a cast [enabled by default]
+       _libaroma_fb->canvas  =
+                             ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/fb.c: In function 'libaroma_fb_config':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/fb.c:400:3: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'dword' [-Wformat=]
+   ALOGV("framebuffer driver Set Config %s=%s,(%x)", name, svalue, dvalue);
+   ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/ui/window.c: In function 'libaroma_window_set_touch_handler':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/ui/window.c:225:22: warning: assignment from incompatible pointer type [enabled by default]
+   win->touch_handler =handler ;
+                      ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/ui/window.c: In function 'libaroma_window_anishow':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/ui/window.c:889:14: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+    if (state >= 1.0) {
+              ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/ui/window.c:895:26: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     float bstate = 255.0 * swift_out_state;
+                          ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/ui/window_manager.c: In function 'libaroma_wm_init':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/ui/window_manager.c:225:2: warning: passing argument 1 of 'xTaskGenericCreate' from incompatible pointer type [enabled by default]
+  libaroma_thread_create_rtos(&_libaroma_wm_ui_thread_var,
+  ^
+In file included from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/contrib/platform/rtos/include/aroma_platform.h:30:0,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma_internal.h:41,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/ui/window_manager.c:26:
+../../../../../kernel/rtos/FreeRTOS/Source/include/task.h:1949:12: note: expected 'TaskFunction_t' but argument is of type 'void * (*)(void *)'
+ BaseType_t xTaskGenericCreate( TaskFunction_t pxTaskCode, const char * const pcName, const uint16_t usStackDepth, void * const pvParameters, UBaseType_t uxPriority, TaskHandle_t * const pxCreatedTask, StackType_t * const puxStackBuffer, const MemoryRegion_t * const xRegions ) PRIVILEGED_FUNCTION; /*lint !e971 Unqualified char types are allowed for strings and single characters only. */
+            ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/ui/window_manager.c: At top level:
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/ui/window_manager.c:654:14: warning: '_libaroma_wm_message_thread' defined but not used [-Wunused-function]
+ static void *_libaroma_wm_message_thread(void *cookie)
+              ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/ui/window_manager.c:37:24: warning: '_libaroma_wm_message_thread_var' defined but not used [-Wunused-variable]
+ static LIBAROMA_THREAD _libaroma_wm_message_thread_var;
+                        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_bar.c: In function 'libaroma_ctl_bar_update':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_bar.c:614:7: warning: passing argument 1 of 'xTaskGenericCreate' from incompatible pointer type [enabled by default]
+       libaroma_thread_create(
+       ^
+In file included from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/contrib/platform/rtos/include/aroma_platform.h:30:0,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma_internal.h:41,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_bar.c:26:
+../../../../../kernel/rtos/FreeRTOS/Source/include/task.h:1949:12: note: expected 'TaskFunction_t' but argument is of type 'void * (*)(void *)'
+ BaseType_t xTaskGenericCreate( TaskFunction_t pxTaskCode, const char * const pcName, const uint16_t usStackDepth, void * const pvParameters, UBaseType_t uxPriority, TaskHandle_t * const pxCreatedTask, StackType_t * const puxStackBuffer, const MemoryRegion_t * const xRegions ) PRIVILEGED_FUNCTION; /*lint !e971 Unqualified char types are allowed for strings and single characters only. */
+            ^
+In file included from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/include/aroma/core.h:40:0,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/include/aroma.h:33,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma_internal.h:31,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_bar.c:26:
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_bar.c: In function '_libaroma_ctl_bar_draw':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_bar.c:855:71: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+                     libaroma_ripple_current(&me->ripple,release_state)-0.5)
+                                                                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/include/aroma/utils/motions.h:55:43: note: in definition of macro 'libaroma_cubic_bezier_swiftout'
+   libaroma_cubic_bezier(0.4027,0,0.2256,1,t) 
+                                           ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_bar.c:854:19: note: in expansion of macro 'MIN'
+                   MIN(MAX(0,(
+                   ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_bar.c:854:23: note: in expansion of macro 'MAX'
+                   MIN(MAX(0,(
+                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_bar.c:855:71: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+                     libaroma_ripple_current(&me->ripple,release_state)-0.5)
+                                                                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/include/aroma/utils/motions.h:55:43: note: in definition of macro 'libaroma_cubic_bezier_swiftout'
+   libaroma_cubic_bezier(0.4027,0,0.2256,1,t) 
+                                           ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_bar.c:854:19: note: in expansion of macro 'MIN'
+                   MIN(MAX(0,(
+                   ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_bar.c:854:23: note: in expansion of macro 'MAX'
+                   MIN(MAX(0,(
+                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_bar.c:855:71: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+                     libaroma_ripple_current(&me->ripple,release_state)-0.5)
+                                                                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/include/aroma/utils/motions.h:55:43: note: in definition of macro 'libaroma_cubic_bezier_swiftout'
+   libaroma_cubic_bezier(0.4027,0,0.2256,1,t) 
+                                           ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_bar.c:854:19: note: in expansion of macro 'MIN'
+                   MIN(MAX(0,(
+                   ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_bar.c:854:23: note: in expansion of macro 'MAX'
+                   MIN(MAX(0,(
+                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_bar.c:855:71: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+                     libaroma_ripple_current(&me->ripple,release_state)-0.5)
+                                                                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/include/aroma/utils/motions.h:55:43: note: in definition of macro 'libaroma_cubic_bezier_swiftout'
+   libaroma_cubic_bezier(0.4027,0,0.2256,1,t) 
+                                           ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_bar.c:854:19: note: in expansion of macro 'MIN'
+                   MIN(MAX(0,(
+                   ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_bar.c:854:23: note: in expansion of macro 'MAX'
+                   MIN(MAX(0,(
+                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_bar.c:853:37: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+                 float outstate = 1.0-libaroma_cubic_bezier_swiftout(
+                                     ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_image.c: In function '_libaroma_ctl_image_thread':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_image.c:88:5: warning: format '%d' expects argument of type 'int', but argument 3 has type 'long int' [-Wformat=]
+     ALOGI("time  %d \n", current_time);
+     ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_image.c:92:7: warning: '0' flag ignored with precision and '%d' gnu_printf format [-Wformat=]
+       snprintf(path, 256, "%s/%0.2d.png", me->resDir  , me->currentPos);
+       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_pager.c: In function '_libaroma_ctl_pager_thread':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_pager.c:421:27: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+    int difxt = dxt * (1.0 - state);
+                           ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_pager.c:447:14: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+    if (state >= 1.0) {
+              ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_pager.c: In function '_libaroma_ctl_pager_msg':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_pager.c:777:34: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+         velocity = ((float) vel) / 100.0;
+                                  ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_pager.c:783:34: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+         velocity = ((float) vel) / 100.0;
+                                  ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_pager.c: In function 'libaroma_ctl_pager_set_active_page':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_pager.c:836:17: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   distanceRatio -= 0.5;
+                 ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_pager.c:837:17: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   distanceRatio *= 0.3;
+                 ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_pager.c:842:40: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+    duration = round(15 * fabs(distance / velocity));
+                                        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_tabs.c: In function '_libaroma_ctl_tabs_req_internal_draw':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_tabs.c:398:3: warning: passing argument 1 of 'xTaskGenericCreate' from incompatible pointer type [enabled by default]
+   libaroma_thread_create(
+   ^
+In file included from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/contrib/platform/rtos/include/aroma_platform.h:30:0,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma_internal.h:41,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_tabs.c:26:
+../../../../../kernel/rtos/FreeRTOS/Source/include/task.h:1949:12: note: expected 'TaskFunction_t' but argument is of type 'void * (*)(void *)'
+ BaseType_t xTaskGenericCreate( TaskFunction_t pxTaskCode, const char * const pcName, const uint16_t usStackDepth, void * const pvParameters, UBaseType_t uxPriority, TaskHandle_t * const pxCreatedTask, StackType_t * const puxStackBuffer, const MemoryRegion_t * const xRegions ) PRIVILEGED_FUNCTION; /*lint !e971 Unqualified char types are allowed for strings and single characters only. */
+            ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_button.c: In function '_libaroma_ctl_button_internal_draw':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_button.c:118:7: warning: variable 'rest_text_color' set but not used [-Wunused-but-set-variable]
+  word rest_text_color = text_color;
+       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_progress.c: In function '_libaroma_ctl_progress_thread':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_progress.c:88:6: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+      / 2.0 + 0.5;
+      ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_progress.c:90:26: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     me->state = distance * 254.0;
+                          ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_progress.c:92:29: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     float newLength = 254.0 * (1 - distance);
+                             ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_progress.c:96:18: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+    me->currstate += deltaTime * 0.2;
+                  ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_progress.c:108:18: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+    if (me->state >= 1.0) {
+                  ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_progress.c:113:23: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+  } else if (me->state < 1.0) {
+                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_progress.c: In function '_libaroma_ctl_progress_draw':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_progress.c:182:30: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   float width = ((float) sz) / 6.0;
+                              ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_progress.c:187:20: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+    length = (360.0 * me->curval) / me->max;
+                    ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_progress.c:192:25: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+    me->curval = (length / 360.0) * me->max;
+                         ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_progress.c:194:18: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     from = 360.0 - from;
+                  ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_progress.c:195:20: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     length = 360.0 - length;
+                    ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_progress.c:223:23: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     right = dw * (1.0 - easeout);
+                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_progress.c:224:22: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     left = dw * (1.0 - easein);
+                      ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_fragment.c: In function '_libaroma_ctl_fragment_thread':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_fragment.c:626:5: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+     printf("_libaroma_ctl_fragment_thread  transition_start transition_start %d win_pos_out %d\n", me->transition_start, me->win_pos_out);
+     ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_scroll.c: In function '_libaroma_ctl_scroll_thread':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_scroll.c:499:27: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+                 ((nowstate>=0.2)&&(me->ovs_ustart==1)&&(me->ovs_state<1)))
+                           ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_scroll.c:609:46: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+                 int nowstate=round(256.0*(1.0-libaroma_control_state(
+                                              ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_scroll.c:625:41: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+                 int nowstate=round(256.0*
+                                         ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_scroll.c: In function '_libaroma_ctl_scroll_draw':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_scroll.c:943:28: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+           if (me->ovs_state<0.25){
+                            ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_scroll.c: In function '_libaroma_ctl_scroll_msg':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_scroll.c:1317:9: warning: passing argument 1 of 'xTaskGenericCreate' from incompatible pointer type [enabled by default]
+         libaroma_thread_create(
+         ^
+In file included from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/contrib/platform/rtos/include/aroma_platform.h:30:0,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma_internal.h:41,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_scroll.c:26:
+../../../../../kernel/rtos/FreeRTOS/Source/include/task.h:1949:12: note: expected 'TaskFunction_t' but argument is of type 'void * (*)(void *)'
+ BaseType_t xTaskGenericCreate( TaskFunction_t pxTaskCode, const char * const pcName, const uint16_t usStackDepth, void * const pvParameters, UBaseType_t uxPriority, TaskHandle_t * const pxCreatedTask, StackType_t * const puxStackBuffer, const MemoryRegion_t * const xRegions ) PRIVILEGED_FUNCTION; /*lint !e971 Unqualified char types are allowed for strings and single characters only. */
+            ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_clock.c: In function '_libaroma_ctl_clock_msg':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_clock.c:72:7: warning: unused variable 'y' [-Wunused-variable]
+   int y = msg->y;
+       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_clock.c:71:7: warning: unused variable 'x' [-Wunused-variable]
+   int x = msg->x;
+       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_clock.c: In function 'getLoacationOnCircles':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_clock.c:135:13: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   tmp = tmp - MYPI / 2;
+             ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_clock.c:141:13: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   tmp = tmp - MYPI;
+             ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/ctl_clock.c:147:13: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+   tmp = tmp - (MYPI + MYPI / 2);
+             ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_check.c: In function '_libaroma_listitem_check_draw':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_check.c:360:23: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+         if (curelstate<0.25){
+                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_check.c:363:28: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+         else if (curelstate>0.75){
+                            ^
+In file included from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma_internal.h:42:0,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_check.c:26:
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_check.c:367:39: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+           relstate=MAX(MIN((curelstate-0.25) * 2,1),0);
+                                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/fallbacks.h:35:23: note: in definition of macro 'MAX'
+   #define MAX(a,b) (((a)>(b))?(a):(b))
+                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_check.c:367:24: note: in expansion of macro 'MIN'
+           relstate=MAX(MIN((curelstate-0.25) * 2,1),0);
+                        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_check.c:367:39: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+           relstate=MAX(MIN((curelstate-0.25) * 2,1),0);
+                                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/fallbacks.h:35:23: note: in definition of macro 'MAX'
+   #define MAX(a,b) (((a)>(b))?(a):(b))
+                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_check.c:367:24: note: in expansion of macro 'MIN'
+           relstate=MAX(MIN((curelstate-0.25) * 2,1),0);
+                        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_check.c:367:39: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+           relstate=MAX(MIN((curelstate-0.25) * 2,1),0);
+                                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/fallbacks.h:35:32: note: in definition of macro 'MAX'
+   #define MAX(a,b) (((a)>(b))?(a):(b))
+                                ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_check.c:367:24: note: in expansion of macro 'MIN'
+           relstate=MAX(MIN((curelstate-0.25) * 2,1),0);
+                        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_check.c:367:39: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+           relstate=MAX(MIN((curelstate-0.25) * 2,1),0);
+                                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/fallbacks.h:35:32: note: in definition of macro 'MAX'
+   #define MAX(a,b) (((a)>(b))?(a):(b))
+                                ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_check.c:367:24: note: in expansion of macro 'MIN'
+           relstate=MAX(MIN((curelstate-0.25) * 2,1),0);
+                        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_option.c: In function '_libaroma_listitem_option_draw':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_option.c:316:23: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+         if (curelstate<0.25){
+                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_option.c:319:28: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+         else if (curelstate>0.75){
+                            ^
+In file included from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma_internal.h:42:0,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_option.c:26:
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_option.c:323:39: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+           relstate=MAX(MIN((curelstate-0.25) * 2,1),0);
+                                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/fallbacks.h:35:23: note: in definition of macro 'MAX'
+   #define MAX(a,b) (((a)>(b))?(a):(b))
+                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_option.c:323:24: note: in expansion of macro 'MIN'
+           relstate=MAX(MIN((curelstate-0.25) * 2,1),0);
+                        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_option.c:323:39: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+           relstate=MAX(MIN((curelstate-0.25) * 2,1),0);
+                                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/fallbacks.h:35:23: note: in definition of macro 'MAX'
+   #define MAX(a,b) (((a)>(b))?(a):(b))
+                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_option.c:323:24: note: in expansion of macro 'MIN'
+           relstate=MAX(MIN((curelstate-0.25) * 2,1),0);
+                        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_option.c:323:39: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+           relstate=MAX(MIN((curelstate-0.25) * 2,1),0);
+                                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/fallbacks.h:35:32: note: in definition of macro 'MAX'
+   #define MAX(a,b) (((a)>(b))?(a):(b))
+                                ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_option.c:323:24: note: in expansion of macro 'MIN'
+           relstate=MAX(MIN((curelstate-0.25) * 2,1),0);
+                        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_option.c:323:39: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+           relstate=MAX(MIN((curelstate-0.25) * 2,1),0);
+                                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/fallbacks.h:35:32: note: in definition of macro 'MAX'
+   #define MAX(a,b) (((a)>(b))?(a):(b))
+                                ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/listitem/listitem_option.c:323:24: note: in expansion of macro 'MIN'
+           relstate=MAX(MIN((curelstate-0.25) * 2,1),0);
+                        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/pay/ctl_pay.c: In function 'libaroma_ctl_pay':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/pay/ctl_pay.c:91:9: warning: implicit declaration of function 'code128_estimate_len' [-Wimplicit-function-declaration]
+         size_t barcode_length = code128_estimate_len(me->text);
+         ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/pay/ctl_pay.c:93:9: warning: implicit declaration of function 'code128_encode_gs1' [-Wimplicit-function-declaration]
+         me->bar_length = code128_encode_gs1(me->text, me->barcode_data, barcode_length);
+         ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/pay/QR_Encode.c:10:15: warning: missing braces around initializer [-Wmissing-braces]
+               26,   19,   16,   13,    9,
+               ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/controls/pay/QR_Encode.c:10:15: warning: (near initialization for 'QR_VersonInfo[1].ncDataCodeWord') [-Wmissing-braces]
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/hid/hid.c: In function 'libaroma_hid_config':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/hid/hid.c:281:2: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'dword' [-Wformat=]
+  ALOGV("hid set config %s=%s,(%x)", name, svalue, dvalue);
+  ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/hid/messages.c:71:14: warning: '_libaroma_msgqueue_hid_thread' defined but not used [-Wunused-function]
+ static void *_libaroma_msgqueue_hid_thread(void *cookie)
+              ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/contrib/platform/rtos/hid_driver.c: In function '_libaroma_msgqueue_tp_thread':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/contrib/platform/rtos/hid_driver.c:119:25: warning: implicit declaration of function 'libaroma_msg_post_hid' [-Wimplicit-function-declaration]
+                         libaroma_msg_post_hid(LIBAROMA_MSG_TOUCH, event.state, event.key, event.x, event.y);
+                         ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/contrib/platform/rtos/hid_driver.c:94:18: warning: variable 'update_flag' set but not used [-Wunused-but-set-variable]
+             bool update_flag = false;
+                  ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/contrib/platform/rtos/hid_driver.c: In function 'rtoshid_init':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/contrib/platform/rtos/hid_driver.c:190:5: warning: passing argument 1 of 'xTaskGenericCreate' from incompatible pointer type [enabled by default]
+     libaroma_thread_create_rtos(
+     ^
+In file included from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/contrib/platform/rtos/include/aroma_platform.h:30:0,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma_internal.h:41,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/contrib/platform/rtos/hid_driver.c:26:
+../../../../../kernel/rtos/FreeRTOS/Source/include/task.h:1949:12: note: expected 'TaskFunction_t' but argument is of type 'void * (*)(void *)'
+ BaseType_t xTaskGenericCreate( TaskFunction_t pxTaskCode, const char * const pcName, const uint16_t usStackDepth, void * const pvParameters, UBaseType_t uxPriority, TaskHandle_t * const pxCreatedTask, StackType_t * const puxStackBuffer, const MemoryRegion_t * const xRegions ) PRIVILEGED_FUNCTION; /*lint !e971 Unqualified char types are allowed for strings and single characters only. */
+            ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/contrib/platform/rtos/hid_driver.c: In function 'rtoshid_getinput':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/contrib/platform/rtos/hid_driver.c:223:10: warning: unused variable 'ret' [-Wunused-variable]
+     byte ret = LIBAROMA_HID_EV_RET_TOUCH;
+          ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/contrib/platform/rtos/hid_driver.c:222:24: warning: unused variable 'queue_item' [-Wunused-variable]
+     LIBAROMA_HID_EVENT queue_item;
+                        ^
+In file included from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/libs/freetype/include/freetype/internal/ftobjs.h:33:0,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/libs/freetype/src/sfnt/sfntpic.c:21,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/libs/freetype/src/sfnt/sfnt.c:22:
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/libs/freetype/src/sfnt/ttload.c: In function 'tt_face_load_font_dir':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/libs/freetype/include/freetype/internal/ftmemory.h:265:48: warning: 'valid_entries' may be used uninitialized in this function [-Wmaybe-uninitialized]
+           FT_ASSIGNP_INNER( ptr, ft_mem_realloc( memory,            \
+                                                ^
+In file included from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/libs/freetype/src/sfnt/sfnt.c:23:0:
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/libs/freetype/src/sfnt/ttload.c:341:25: note: 'valid_entries' was declared here
+     FT_UShort       nn, valid_entries;
+                         ^
+In file included from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/libs/freetype/src/cff/cf2glue.h:45:0,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/libs/freetype/src/cff/cf2ft.h:52,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/libs/freetype/src/cff/cffgload.c:29,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/libs/freetype/src/cff/cff.c:28:
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/libs/freetype/src/cff/cf2hints.c: In function 'cf2_glyphpath_init':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/libs/freetype/src/cff/cf2fixed.h:67:30: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+           ( (CF2_Fixed)( (f) * 65536.0 + 0.5 ) )
+                              ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/libs/freetype/src/cff/cf2hints.c:1066:32: note: in expansion of macro 'cf2_floatToFixed'
+     glyphpath->snapThreshold = cf2_floatToFixed( 0.1f );
+                                ^
+In file included from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/text.c:33:0:
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/text/text_tags.c: In function '_libaroma_text_parse_tag':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/text/text_tags.c:171:49: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+                 if ((linesize < 1) || (linesize > 2.50)) {
+                                                 ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/src/aroma/graph/text/text_tags.c:172:63: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+                   linesize = ((float) chunk->def_linespacing) / 100.0;
+                                                               ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/libs/png/pngread.c: In function 'png_build_index':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/libs/png/pngread.c:745:8: warning: unused variable 'ret' [-Wunused-variable]
+    int ret;
+        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/libs/png/pngrutil.c: In function 'png_set_interlaced_pass':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/libs/png/pngrutil.c:4162:18: warning: unused variable 'png_pass_yinc' [-Wunused-variable]
+    PNG_CONST int png_pass_yinc[7] = {8, 8, 8, 4, 4, 2, 2};
+                  ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/libs/png/pngrutil.c:4160:18: warning: unused variable 'png_pass_ystart' [-Wunused-variable]
+    PNG_CONST int png_pass_ystart[7] = {0, 0, 4, 0, 2, 0, 1};
+                  ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/main.c: In function 'main':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/main.c:120:5: warning: implicit declaration of function 'global_queue_init' [-Wimplicit-function-declaration]
+     global_queue_init() ;
+     ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/main.c:131:35: warning: passing argument 1 of 'libaroma_stream_mem' discards 'const' qualifier from pointer target type [enabled by default]
+                                   LiberationSansNarrow_Regular, sizeof(LiberationSansNarrow_Regular)));
+                                   ^
+In file included from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/include/aroma/core.h:37:0,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/include/aroma.h:33,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/main.c:56:
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/include/aroma/utils/stream.h:113:18: note: expected 'bytep' but argument is of type 'const unsigned char *'
+ LIBAROMA_STREAMP libaroma_stream_mem(
+                  ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/main.c:129:10: warning: unused variable 'sucess' [-Wunused-variable]
+     byte sucess = libaroma_font(0,
+          ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma_test_graphonly.c: In function 'release_aroma':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma_test_graphonly.c:54:3: warning: implicit declaration of function 'libaroma_fb_release' [-Wimplicit-function-declaration]
+   libaroma_fb_release();
+   ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma_test_graphonly.c: In function 'getLoacationOnCircle':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma_test_graphonly.c:68:15: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     tmp = tmp - MYPI / 2;
+               ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma_test_graphonly.c:74:15: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     tmp = tmp - MYPI;
+               ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma_test_graphonly.c:80:15: warning: implicit conversion from 'float' to 'double' to match other operand of binary expression [-Wdouble-promotion]
+     tmp = tmp - (MYPI + MYPI / 2);
+               ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/clock_test.c: In function 'clock_touch_handler':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/clock_test.c:29:6: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+      LIBAROMA_CMD_PARAM(command));
+      ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/clock_test.c:29:6: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'long unsigned int' [-Wformat=]
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/clock_test.c:29:6: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/clock_test.c:17:7: warning: unused variable 'freq' [-Wunused-variable]
+   int freq = 3000 ;
+       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/clock_test.c:16:8: warning: unused variable 'param' [-Wunused-variable]
+   byte param = LIBAROMA_CMD_PARAM(command);
+        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/clock_test.c:14:8: warning: unused variable 'cmd' [-Wunused-variable]
+   byte cmd = LIBAROMA_CMD(command);
+        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/clock_test.c: In function 'clock_test':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/clock_test.c:49:2: warning: passing argument 1 of 'libaroma_stream_mem' discards 'const' qualifier from pointer target type [enabled by default]
+  LIBAROMA_STREAMP stream = libaroma_stream_mem(res_get(RES_INDEX_RUN_BIKE),res_get_length(RES_INDEX_RUN_BIKE)) ;
+  ^
+In file included from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/include/aroma/core.h:37:0,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/include/aroma.h:33,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/clock_test.c:8:
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/include/aroma/utils/stream.h:113:18: note: expected 'bytep' but argument is of type 'const unsigned char *'
+ LIBAROMA_STREAMP libaroma_stream_mem(
+                  ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/clock_test.c:90:6: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+      LIBAROMA_CMD_PARAM(command));
+      ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/clock_test.c:90:6: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'long unsigned int' [-Wformat=]
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/clock_test.c:90:6: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/clock_test.c:74:8: warning: unused variable 'param' [-Wunused-variable]
+   byte param = LIBAROMA_CMD_PARAM(command);
+        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/clock_test.c:72:8: warning: unused variable 'cmd' [-Wunused-variable]
+   byte cmd = LIBAROMA_CMD(command);
+        ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/clock_test.c:44:20: warning: unused variable 'clock2' [-Wunused-variable]
+  LIBAROMA_CONTROLP clock2 = libaroma_ctl_clock(win, 2, LIBAROMA_POS_HALF, 0,
+                    ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/clock_test.c:40:20: warning: unused variable 'clock' [-Wunused-variable]
+  LIBAROMA_CONTROLP clock = libaroma_ctl_clock(win, 1, 0, 0,
+                    ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/sport_test.c: In function 'sport_test':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/sport_test.c:25:5: warning: passing argument 1 of 'libaroma_stream_mem' discards 'const' qualifier from pointer target type [enabled by default]
+     LIBAROMA_STREAMP stream = libaroma_stream_mem(res_get(RES_INDEX_RUN_BIKE), res_get_length(RES_INDEX_RUN_BIKE));
+     ^
+In file included from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/include/aroma/core.h:37:0,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/include/aroma.h:33,
+                 from ../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/sport_test.c:3:
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/libaroma/include/aroma/utils/stream.h:113:18: note: expected 'bytep' but argument is of type 'const unsigned char *'
+ LIBAROMA_STREAMP libaroma_stream_mem(
+                  ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/sport_test.c:81:16: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+                LIBAROMA_CMD_PARAM(command));
+                ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/sport_test.c:81:16: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'long unsigned int' [-Wformat=]
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/sport_test.c:81:16: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'long unsigned int' [-Wformat=]
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/sport_test.c:54:14: warning: unused variable 'param' [-Wunused-variable]
+         byte param = LIBAROMA_CMD_PARAM(command);
+              ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/sport_test.c:53:14: warning: unused variable 'id' [-Wunused-variable]
+         word id = LIBAROMA_CMD_ID(command);
+              ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/sport_test.c:52:14: warning: unused variable 'cmd' [-Wunused-variable]
+         byte cmd = LIBAROMA_CMD(command);
+              ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/sport_test.c:34:23: warning: unused variable 'qrcode' [-Wunused-variable]
+     LIBAROMA_CONTROLP qrcode = libaroma_ctl_pay(win2, 5, libaroma_px(320), 0, libaroma_px(320), libaroma_px(320), "[FNC1] 00 12345678 0000112201", 0);
+                       ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/ui_demo_task.c: In function 'ui_task_main':
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/ui_demo_task.c:108:5: warning: implicit declaration of function 'sport_test' [-Wimplicit-function-declaration]
+     sport_test() ;
+     ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/ui_demo_task.c:109:5: warning: implicit declaration of function 'testFb' [-Wimplicit-function-declaration]
+     testFb() ;
+     ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/ui_demo_task.c:111:10: warning: unused variable 'need_sync' [-Wunused-variable]
+     byte need_sync = 0;
+          ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/ui_demo_task.c:103:30: warning: unused variable 'queue_item' [-Wunused-variable]
+     ui_task_message_struct_t queue_item;
+                              ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/ui_demo_task.c: At top level:
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/ui_demo_task.c:62:3: warning: 'ui_task_cntx' defined but not used [-Wunused-variable]
+ } ui_task_cntx;
+   ^
+../../../../../project/mt2523_hdk/apps/gdi_display_helloworld/src/ui_demo_task.c:76:13: warning: 'ui_task_msg_handler' defined but not used [-Wunused-function]
+ static void ui_task_msg_handler(ui_task_message_struct_t *message)
+             ^

@@ -339,7 +339,7 @@ void system_init(void)
     SystemCoreClockUpdate();
 
     /* initialize UART2 as logging port */
-    log_uart_init(HAL_UART_2);
+    log_uart_init(HAL_UART_0);
 
     /* do infrastructure initialization */
     prvSetupHardware();

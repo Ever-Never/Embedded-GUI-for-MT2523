@@ -45,18 +45,21 @@
 #define UI_TASK_NAME "UI_DEMO"
 #define UI_TASK_STACK_SIZE 4800
 #define UI_TASK_PRIORITY 3
+#include <aroma.h>
+#include "message_map_queue.h"
 
-typedef struct ui_task_message_struct {
+typedef struct ui_task_message_struct
+{
     int message_id;
     int param1;
-    void* param2;
+    void *param2;
 } ui_task_message_struct_t;
 
-static struct {
+static struct
+{
     QueueHandle_t event_queue;
-    void* user_data;
+    void *user_data;
 } ui_task_cntx;
-
 
 log_create_module(GRAPHIC_TAG, PRINT_LEVEL_INFO);
 
@@ -72,18 +75,19 @@ log_create_module(GRAPHIC_TAG, PRINT_LEVEL_INFO);
  *****************************************************************************/
 static void ui_task_msg_handler(ui_task_message_struct_t *message)
 {
-    if (!message) {
+    if (!message)
+    {
         return;
     }
     GRAPHICLOG("ui_task_msg_handler, message_id:%d", message->message_id);
-    switch (message->message_id) {
-        default:
-            common_event_handler((message_id_enum) message->message_id, (int32_t) message->param1, (void*) message->param2);
-            break;
-                
+    switch (message->message_id)
+    {
+    default:
+        common_event_handler((message_id_enum)message->message_id, (int32_t)message->param1, (void *)message->param2);
+        break;
     }
 }
- 
+
 /*****************************************************************************
  * FUNCTION
  *  ui_task_main
@@ -94,17 +98,46 @@ static void ui_task_msg_handler(ui_task_message_struct_t *message)
  * RETURNS
  *  void
  *****************************************************************************/
-void ui_task_main(void*arg)
+void ui_task_main(void *arg)
 {
     ui_task_message_struct_t queue_item;
 
-    ui_task_cntx.event_queue = xQueueCreate(UI_TASK_QUEUE_SIZE , sizeof( ui_task_message_struct_t ) );
-    GRAPHICLOG("ui_task_main");  
-    main_screen_init(); // Initialize the main screen.
-    main_screen_show(); // Display the main screen.
-    while (1) {
-        if (xQueueReceive(ui_task_cntx.event_queue, &queue_item, portMAX_DELAY)) {
-            ui_task_msg_handler(&queue_item);
+    
+    GRAPHICLOG("ui_task_main");
+    //clock_test();
+    sport_test() ;
+    testFb() ;
+    LIBAROMA_MSG msg_data;
+    byte need_sync = 0;
+    int msg = -1;
+    memset(&msg_data, 0, sizeof(LIBAROMA_MSG));
+    QueueHandle_t handle = xQueueCreate(3, sizeof(MESSAGE_T));
+    message_queue_map(UI_SET_UPDATE_FREQUECY, handle);
+    message_queue_map(UI_UPDATE, handle);
+    message_queue_map(UI_TP_UPLOAD, handle);
+    message_queue_map(UI_KEY_UPLOAD, handle);
+    while (1)
+    {
+        if (-1 != MessageRecv(handle, &msg, &msg_data))
+        {
+
+            printf("=============== receive msg id ====================== %d", msg);
+            switch (msg)
+            {
+            case UI_SET_UPDATE_FREQUECY:
+            {
+                printf("===============set ui update delay frequency ======================");
+                // delay_ms = (int)msg_data;
+                break;
+            }
+            case UI_KEY_UPLOAD:
+            case UI_TP_UPLOAD:
+            {
+                // LIBAROMA_MSGP libaroma_msgp = (LIBAROMA_MSGP) msg_data  ;
+
+                break;
+            }
+            }
         }
     }
 }
@@ -122,8 +155,7 @@ void ui_task_main(void*arg)
 TaskHandle_t demo_app_start()
 {
     TaskHandle_t task_handler;
-    xTaskCreate((TaskFunction_t) ui_task_main, UI_TASK_NAME, UI_TASK_STACK_SIZE/(( uint32_t )sizeof( StackType_t )), NULL, UI_TASK_PRIORITY, &task_handler );
+    xTaskCreate((TaskFunction_t)ui_task_main, UI_TASK_NAME, UI_TASK_STACK_SIZE / ((uint32_t)sizeof(StackType_t)), NULL, 3, &task_handler);
     GRAPHICLOG("demo_app_start, task_handler:%d", task_handler);
     return task_handler;
 }
-

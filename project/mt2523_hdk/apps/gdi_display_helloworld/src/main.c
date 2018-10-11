@@ -53,6 +53,10 @@
 /* application includes */
 #include "bt_init.h"
 
+#include "aroma.h"
+
+#include "message_map_queue.h"
+
 extern void demo_app_start();
 
 /* Create the log control block as user wishes. Here we use 'template' as module name.
@@ -60,6 +64,8 @@ extern void demo_app_start();
  * Please refer to the log dev guide under /doc folder for more details.
  */
 log_create_module(template, PRINT_LEVEL_INFO);
+
+extern const unsigned char LiberationSansNarrow_Regular[401540];
 
 
 /**
@@ -98,7 +104,7 @@ int main(void)
     /* user needs to create BT task to do BT initialization,
        since BT initialization has to be done in task level.
      */
-    bt_create_task();
+    // bt_create_task();
 
     /* user may create own tasks here.
      * EX:
@@ -109,12 +115,26 @@ int main(void)
      *    refer to example in task_def.h, then makes own task MACROs defined.
      */
 
-		demo_app_start(); // Create a UI task in your main function.
+    LinkListInit();
+
+    global_queue_init() ;
+
+     
+
+ // Create a UI task in your main function.
 		
 
-    /* Call this function to indicate the system initialize done. */
-    SysInitStatus_Set();
 
+    libaroma_start() ;
+    byte sucess = libaroma_font(0,
+                              libaroma_stream_mem(
+                                  LiberationSansNarrow_Regular, sizeof(LiberationSansNarrow_Regular)));
+    // libaroma_wm_client_start();
+
+	demo_app_start();
+
+    // /* Call this function to indicate the system initialize done. */
+    SysInitStatus_Set();
     /* Start the scheduler. */
     vTaskStartScheduler();
     /* If all is well, the scheduler will now be running, and the following line
