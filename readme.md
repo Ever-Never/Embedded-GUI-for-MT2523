@@ -32,7 +32,7 @@
 
 #### 截图
 
-![https://github.com/Ever-Never/Embedded-GUI-for-MT2523/blob/master/pics/2018-10-11%2013-08-45.png]
+![]{https://github.com/Ever-Never/Embedded-GUI-for-MT2523/blob/master/pics/2018-10-11%2013-08-45.png}
 
 
   SDK:https://labs.mediatek.com/zh-cn/download/Cobne0ON
