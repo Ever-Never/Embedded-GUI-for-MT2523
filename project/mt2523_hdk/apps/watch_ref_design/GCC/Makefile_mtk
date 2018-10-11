@@ -1,0 +1,129 @@
+SOURCE_DIR = ../../../../..
+BINPATH = $(SOURCE_DIR)/tools/gcc/gcc-arm-none-eabi/bin
+
+PWD= $(shell pwd)
+FEATURE ?= feature.mk
+include $(FEATURE)
+# Gloabl Config
+-include $(SOURCE_DIR)/.config
+# IC Config
+-include $(SOURCE_DIR)/config/chip/$(IC_CONFIG)/chip.mk
+# Board Config
+-include $(SOURCE_DIR)/config/board/$(BOARD_CONFIG)/board.mk
+
+DEBUG = 0
+FLOAT_TYPE = hard
+BUILD_DIR = $(PWD)/Build
+
+# Project name
+PROJ_NAME = touchgfx
+PROJ_PATH = $(PWD)
+OUTPATH = $(PWD)/Build
+
+# Sources or Lib
+# RTOS source files
+include $(SOURCE_DIR)/kernel/rtos/FreeRTOS/module.mk
+
+# kernel service files
+LIBS += $(OUTPATH)/libservice.a
+
+# HAL driver files
+LIBS += $(OUTPATH)/libhal.a
+LIBS += $(SOURCE_DIR)/prebuilt/driver/chip/mt2523/lib/libcryptos_CM4_GCC.a
+
+# Main APP files
+APP_PATH = project/mt2523_hdk/apps/touchgfx
+APP_PATH_SRC = $(APP_PATH)/src
+
+APP_FILES = $(APP_PATH_SRC)/main.c \
+            $(APP_PATH_SRC)/regions_init.c \
+            $(APP_PATH)/GCC/syscalls.c
+
+APP_FILES += $(APP_PATH_SRC)/ept_gpio_var.c
+APP_FILES += $(APP_PATH_SRC)/ept_eint_var.c
+APP_FILES += $(APP_PATH_SRC)/sys_init.c
+APP_FILES += $(APP_PATH_SRC)/system_mt2523.c
+
+C_FILES += $(APP_FILES)
+C_FILES += driver/board/mt25x3_hdk/ept/src/bsp_gpio_ept_config.c
+
+#CXX_FILES for .cpp
+CXX_FILES += 
+
+# add startup file to build
+S_FILES += $(APP_PATH)/GCC/startup_mt2523.s
+
+C_OBJS   = $(C_FILES:%.c=$(BUILD_DIR)/%.o)
+CXX_OBJS = $(CXX_FILES:%.cpp=$(BUILD_DIR)/%.o)
+S_OBJS   = $(S_FILES:%.s=$(BUILD_DIR)/%.o)
+
+# overwrite FPUFLAGS
+FPUFLAGS = -fsingle-precision-constant -Wdouble-promotion -mfpu=fpv4-sp-d16 -mfloat-abi=softfp
+
+# LD Flags
+LDFLAGS = $(ALLFLAGS) $(FPUFLAGS) --specs=nano.specs -lnosys -nostartfiles
+LDFLAGS += -Wl,-Tflash.ld -Wl,--gc-sections
+ifeq ($(DEBUG_IO), 1)
+LDFLAGS += --specs=rdimon.specs -lrdimon
+CFLAGS += -DDEBUG_IO
+endif
+#LDFLAGS = $(CFLAGS)
+
+###################################################
+# include path
+CFLAGS += -I$(SOURCE_DIR)/$(APP_PATH)/inc
+CFLAGS += -I$(SOURCE_DIR)/driver/CMSIS/Include
+CFLAGS += -I$(SOURCE_DIR)/driver/CMSIS/Device/MTK/mt2523/Include
+CFLAGS += -I$(SOURCE_DIR)/driver/chip/mt2523/inc
+CFLAGS += -I$(SOURCE_DIR)/driver/chip/inc
+CFLAGS += -I$(SOURCE_DIR)/kernel/service/inc
+CFLAGS += -I$(SOURCE_DIR)/driver/board/mt25x3_hdk/ept/inc
+
+# CXXFLAGS for .cpp
+CXXFLAGS = $(CFLAGS)
+CXXFLAGS += -fno-rtti -fno-exceptions
+###################################################
+# Module folder path
+MODULE_PATH += $(DRV_CHIP_PATH)
+MODULE_PATH += $(KRL_SRV_PATH)
+
+###################################################
+# Rules
+.PHONY: proj clean $(MODULE_PATH)
+
+all: proj
+	@mkdir -p $(BUILD_DIR)
+	@$(SIZE) $(OUTPATH)/$(PROJ_NAME).elf
+	@$(SOURCE_DIR)/tools/scripts/build/copy_firmware.sh $(SOURCE_DIR) $(OUTPATH) $(IC_CONFIG) $(BOARD_CONFIG) $(PROJ_NAME).bin $(PWD)
+
+MOD_EXTRA = BUILD_DIR=$(BUILD_DIR) OUTPATH=$(OUTPATH) PROJ_PATH=$(PROJ_PATH) FPUFLAGS="$(FPUFLAGS)"
+
+$(LIBS): $(MODULE_PATH)
+
+$(MODULE_PATH):
+	@+make -C $@ $(MOD_EXTRA) $($@_EXTRA)
+
+proj: $(OUTPATH)/$(PROJ_NAME).elf
+
+$(OUTPATH)/$(PROJ_NAME).elf: $(C_OBJS) $(CXX_OBJS) $(S_OBJS) $(LIBS)
+	@echo Linking...
+	@if [ -e "$@" ]; then rm -f "$@"; fi
+	@if [ -e "$(OUTPATH)/$(PROJ_NAME).map" ]; then rm -f "$(OUTPATH)/$(PROJ_NAME).map"; fi
+	@if [ -e "$(OUTPATH)/$(PROJ_NAME).dis" ]; then rm -f "$(OUTPATH)/$(PROJ_NAME).dis"; fi
+	@if [ -e "$(OUTPATH)/$(PROJ_NAME).hex" ]; then rm -f "$(OUTPATH)/$(PROJ_NAME).hex"; fi
+	@if [ -e "$(OUTPATH)/$(PROJ_NAME).bin" ]; then rm -f "$(OUTPATH)/$(PROJ_NAME).bin"; fi
+	@echo $(patsubst $(SDK_PATH)/%,$(SOURCE_DIR)/%, $(LDFLAGS) -Wl,--start-group $^ -Wl,--end-group -Wl,-Map=$(patsubst $(SDK_PATH)/%,$(SOURCE_DIR)/%,$(OUTPATH)/$(PROJ_NAME).map) -lm -lstdc++ -o $@) > $(OUTPATH)/link_option.tmp
+	@$(CC) @$(OUTPATH)/link_option.tmp 2>>$(ERR_LOG)
+	@rm -f $(OUTPATH)/link_option.tmp
+	@$(OBJDUMP) -D $(OUTPATH)/$(PROJ_NAME).elf > $(OUTPATH)/$(PROJ_NAME).dis
+	@$(OBJCOPY) -O ihex $(OUTPATH)/$(PROJ_NAME).elf $(OUTPATH)/$(PROJ_NAME).hex
+	@$(OBJCOPY) -O binary $(OUTPATH)/$(PROJ_NAME).elf $(OUTPATH)/$(PROJ_NAME).bin
+	@echo Done
+
+
+include $(SOURCE_DIR)/.rule.mk
+
+clean:
+	rm -rf $(OUTPATH)
+
+

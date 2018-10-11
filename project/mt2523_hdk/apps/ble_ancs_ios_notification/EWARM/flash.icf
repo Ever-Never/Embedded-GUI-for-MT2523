@@ -1,0 +1,69 @@
+/*###ICF### Section handled by ICF editor, don't touch! ****/
+/*-Editor annotation file-*/
+/* IcfEditorFile="$TOOLKIT_DIR$\config\ide\IcfEditor\cortex_v1_0.xml" */
+/*-Specials-*/
+define symbol __ICFEDIT_intvec_start__ = 0x00000000;
+/*-Memory Regions-*/
+
+define symbol __ICFEDIT_region_BL_start__ = 0x08000000;
+define symbol __ICFEDIT_region_BL_end__   = 0x0800FFFF;
+define symbol __ICFEDIT_region_ROM_start__ = 0x08010000;
+define symbol __ICFEDIT_region_ROM_end__   = 0x083E0000;
+define symbol __ICFEDIT_region_RAM_start__ = 0x00000000;
+define symbol __ICFEDIT_region_RAM_end__   = 0x00400000;
+define symbol __ICFEDIT_region_VRAM_start__ = 0x10000000;
+define symbol __ICFEDIT_region_VRAM_end__   = 0x10400000;
+define symbol __ICFEDIT_region_TCM_start__ = 0x04008000;
+define symbol __ICFEDIT_region_TCM_end__   = 0x04028000;
+/*-Sizes-*/
+define symbol __ICFEDIT_size_cstack__ = 0x1000;
+/**** End of ICF editor section. ###ICF###*/
+
+define memory mem with size = 4G;
+define region BL_region       = mem:[from __ICFEDIT_region_BL_start__    to __ICFEDIT_region_BL_end__];
+define region ROM_region      = mem:[from __ICFEDIT_region_ROM_start__   to __ICFEDIT_region_ROM_end__];
+define region RAM_region      = mem:[from __ICFEDIT_region_RAM_start__   to __ICFEDIT_region_RAM_end__];
+define region VRAM_region     = mem:[from __ICFEDIT_region_VRAM_start__   to __ICFEDIT_region_VRAM_end__];
+define region TCM_region      = mem:[from __ICFEDIT_region_TCM_start__   to __ICFEDIT_region_TCM_end__];
+
+define block CSTACK    with alignment = 8, size = __ICFEDIT_size_cstack__   { };
+
+define block RAM_BLOCK with fixed order { section .intvec,
+                                          section .ram_code,
+                                          section .ram_rodata,
+                                          section .noncached_rwdata,
+                                          section .noncached_zidata,
+                                        };
+define block VRAM_BLOCK with fixed order {
+                                          readwrite                                     
+                                        };
+
+define block TCM_BLOCK with fixed order { section .tcm_code,
+                                          section .tcm_rodata,
+                                          section .tcm_rwdata,
+                                          section .tcm_zidata
+                                        };
+
+initialize by copy { section .intvec };
+initialize by copy { section .ram_code };
+initialize by copy { section .ram_rodata };
+initialize by copy { section .noncached_rwdata };
+initialize by copy { readwrite };
+initialize by copy { section .tcm_code };
+initialize by copy { section .tcm_rodata };
+initialize by copy { section .tcm_rwdata };
+
+do not initialize  { section .noinit };
+
+place in BL_region             { section .bootloader };
+place at start of ROM_region   { section .reset_handler };
+place in ROM_region            { readonly };
+
+
+place in RAM_region            { block RAM_BLOCK };
+place at end of VRAM_region    { block VRAM_BLOCK };
+
+place at start of TCM_region   { block TCM_BLOCK };
+place at end of TCM_region     { block CSTACK };      
+
+check that size(block RAM_BLOCK) + size(block VRAM_BLOCK) <= size(RAM_region);

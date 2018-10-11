@@ -1,0 +1,125 @@
+SYStem.RESet
+SYStem.CPU CORTEXM4
+sys.config memoryaccessport 3
+
+system.option enreset on
+system.option trst on
+SYStem.JtagClock 1MHz
+sys.o cflush on
+SYStem.Up
+
+setup.IMASKHLL ON
+setup.IMASKASM ON
+
+Break.Select Program OnChip
+Break.Select Hll OnChip
+Break.Select Spot OnChip
+Break.Select Read OnChip
+Break.Select Write OnChip
+
+
+&EMI_AUTO_RES=0 ; enable EMI auto response in sync mode
+&PLL_INIT=0  ;FPGA does not have PLL, should set to 0
+&REMAP=0
+
+
+; ===================================================================
+; FPGA required
+; ===================================================================
+;D.S SD:0xA0010304 %LE %WORD 0          ; FPGA only
+
+D.S SD:0xA2050000 %LE %WORD 0x2200       ; Disable Watch Dog Timer
+
+D.S SD:0xA0880004 %LE %WORD 0x3       ; invalid cache(workaround reset problem)
+D.S SD:0xA0880000 %LE %WORD 0x0       ; disable cache(workaround reset problem)
+
+IF &EMI_AUTO_RES==0
+(
+D.S SD:0xA0050060 %LE %WORD 0x1000  ; enable EMI auto response in sync mode
+)
+
+IF &REMAP==1    ; remap on
+(
+D.S SD:0xA0510000 %LE %LONG 0x3    ; remap : bank1 to 0x0000_0000
+                                    ; bank0 to 0x1000_0000
+)
+
+
+;EMI_IDLE
+;p/x *(int *)0xA00500E0=0x1F0000  just for FPGA
+;D.S SD:0xA00500E0 %LE %LONG 0x1F0000
+
+;p/x *(int *)0xA0050160=0x13030000
+D.S SD:0xA0050160 %LE %LONG 0x0d030000
+
+;p/x *(int *)0xA0050160=0x110000
+;D.S SD:0xA0050160 %LE %LONG 0x110000
+
+;p/x *(int *)0xA0510000=0x3
+;D.S SD:0xA0510000 %LE %LONG 0x3
+
+;D.S SD:0xA0050160 %LE %LONG 0x10030000
+;D.S SD:0xA0050070 %LE %LONG 0x10
+
+
+;;;clear all pdn
+;PDN_CLRD0
+D.S SD:0xA2010320 %lE %WORD 0xFFFF;
+;PDN_CLRD1
+D.S SD:0xA2010324 %lE %WORD 0xFFFF;
+;PDN_CLRD2
+D.S SD:0xA2010328 %lE %WORD 0xFFFF;
+
+;;;;DCM;;;;;;;;;;;;;;;;
+;;D.S SD:0xA0010110 %lE %WORD  0x200
+;;D.S SD:0xA00501a0 %lE %WORD  0x240
+
+;;;Enable DSP RAM
+;D.S SD:0xA05000E0 %LE %LONG 0x80000000;
+
+; Enable PREFETCH
+;D.S SD:0x81000070 %LE %LONG 0xFF07FF07
+
+Local &start &end
+&start=clock.seconds()
+
+&end=clock.seconds()
+Print "Elapsed time is " &end-&start    " seconds"
+
+
+; ===================================================================
+; Download the binary image to PSRAM directly
+; ===================================================================
+;D.LOAD.BINARY .\..\..\..\..\release\MT2523\bin\MT2523_EXT.bin   0x0--0x04000000 /quad
+;D.LOAD.BINARY   .\..\..\..\..\..\..\bootrom_MT6261_E1_slim_test_header\Bin\MT2523_CM4_E1_BOOTROM_RELEASE.bin 0x04008000 /quad
+;D.LOAD.ELF .\..\..\..\..\release\MT2523\bin\MT2523_EXT.elf  /nocode /quad
+
+D.LOAD.BINARY .\Build\mt2523_bootloader.bin   0x04006000 /quad
+D.LOAD.ELF .\Build\mt2523_bootloader.elf  /nocode /quad
+
+;R.S R13 0x04028000		; set stack pointer to the end of CM4 TCM
+;R.S PC Reset_Handler	; real target bypass BROM effect
+R.S PC 0x04006000	; real target bypass BROM effect
+
+;y.spath.translate ".\..\..\..\common\src" "X:\"
+;y.spath .\..\..\..\common\src
+;y.spath .\..\..\..\..\..\driver\board\mt25x3_hdk\bootloader\src\
+
+y.spath .\..\..\..\..\..\driver\board\mt25x3_hdk\bootloader\core\src
+y.spath .\..\..\..\..\..\driver\chip\mt2523\src
+y.spath .\..\..\..\..\..\driver\board\mt25x3_hdk\emi\src
+
+;winclear
+
+; WinPOS 0. 0. 70. 10. 0. 0.
+; Data.dump 0xA0050200--0xA0050300 /DIALOG
+
+;menu.reprogram FPGA_MT2523_ext.men
+
+D.L
+
+;v.watch %Hex (SCB_Type *)0xE000ED00
+;v.watch %Hex (NVIC_Type *)0xE000E100
+;v.watch %Hex (MPU_Type *)0xE000ED90
+
+

@@ -1,0 +1,14 @@
+/* AUTO GEN PLEASE DO NOT MODIFY IT */ 
+/* AUTO GEN PLEASE DO NOT MODIFY IT */ 
+
+
+#ifndef __ICCARM__ 
+#define ATTR_TEXT_IN_PWR_FW    __attribute__ ((__section__(".pwrfw"))) 
+#else 
+#define ATTR_TEXT_IN_PWR_FW    _Pragma("location=\".pwrfw\"") 
+#endif 
+
+
+ATTR_TEXT_IN_PWR_FW const unsigned char TxPwr_array[] = {
+0x76, 0x82, 0x76, 0x86, 0xc5, 0xc5, 0xc4, 0xc3, 0xc1, 0xc0, 0xc0, 0xc2, 0xc2, 0xc0, 0xc0, 0x82, 
+0x82, 0x00, 0x00, 0x00, 0x00, 0x83, 0x83, 0x00} ;

@@ -1,0 +1,123 @@
+__var RCC_CFGR;
+__var RCC_CR;
+__var RCC_CIR;
+__var IWDG_PR;
+__var IWDG_RLR;
+
+execUserFlashInit()
+{
+__message "Executing execUserFlashInit() function";
+/* Disable watch dog */
+__writeMemory32(0x00000011,0xA2090000, "Memory");
+
+/* Disable cache */
+__writeMemory32(0x00000003, 0xE0180004, "Memory");
+__writeMemory32(0x00000000, 0xE0180000, "Memory");
+
+__message "FINISH Executing execUserFlashInit() function";
+}
+
+execUserFlashReset()
+{
+__message "Executing execUserFlashReset() function";
+
+/* Disable watch dog */
+__writeMemory32(0x00000011,0xA2090000, "Memory");
+
+__message "FINISH Executing execUserFlashReset() function";
+}
+
+execUserFlashExit()
+{
+__message "Executing execUserFlashExit() function";
+
+/* Disable watch dog */
+__writeMemory32(0x00000011,0xA2090000, "Memory");
+
+__message "FINISH Executing execUserFlashExit() function";
+}
+
+execUserPreload()
+{
+__message "Executing execUserPreload() function";
+
+/* Disable watch dog */
+__writeMemory32(0x00000011,0xA2090000, "Memory");
+
+/* Disable cache */
+__writeMemory32(0x00000003, 0xE0180004, "Memory");
+__writeMemory32(0x00000000, 0xE0180000, "Memory");
+
+__message "FINISH Executing execUserPreload() function";
+}
+
+execUserSetup()
+{
+__message "Executing execUserSetup() function";
+
+/* Disable watch dog */
+__writeMemory32(0x00000011,0xA2090000, "Memory");
+
+/* Disable cache */
+__writeMemory32(0x00000003, 0xE0180004, "Memory");
+__writeMemory32(0x00000000, 0xE0180000, "Memory");
+
+/* Disable MPU */
+__writeMemory32(0x00000000, 0xE000ED94, "Memory");
+
+/* Enable bootslave */
+//__writeMemory32(0x00000000, 0xA21E0000, "Memory");
+//__writeMemory32(0x04100000, 0xA21E0004, "Memory");
+//__writeMemory32(0x00000001, 0xA21E0008, "Memory");
+
+__message "FINISH Executing execUserSetup() function";
+}
+
+execUserPreReset()
+{
+__message "Executing execUserPreReset() function";
+
+/* Disable bootslave */
+__writeMemory32(0x00000000,0xA2110008, "Memory");
+
+/* Disable watch dog */
+__writeMemory32(0x00000011,0xA2090000, "Memory");
+
+/* Disable cache */
+//__writeMemory32(0x00000003, 0xE0180004, "Memory");
+//__writeMemory32(0x00000000, 0xE0180000, "Memory");
+
+__message "FINISH Executing execUserPreReset() function";
+}
+
+execUserReset() 
+{ 
+__message "Executing execUserReset() function"; 
+
+/* PND all on */
+//__writeMemory32(0x00B0A700,0xa2010320, "Memory");
+//__writeMemory32(0x00F9F4CF,0xa2010324, "Memory");
+//__writeMemory32(0x007977DF,0xa2010328, "Memory");
+//__writeMemory32(0x000003FF,0xA20A0020, "Memory");
+//__writeMemory32(0x00000744,0xA21D0010, "Memory");
+
+/* Disable watch dog */
+__writeMemory32(0x00000011,0xA2090000, "Memory");
+
+/* EMI init */
+//__writeMemory32(0x04028000,0x00000000, "Memory");
+//__writeMemory32(0x08012000,0x00000004, "Memory");
+//__writeMemory32(0x0f030000,0xA0050160, "Memory");
+
+if(__readMemory32(0x00000000, "Memory") != 0x76867682){  
+	__writeMemory32(0x76867682, 0xA20E0094, "Memory");
+	__writeMemory32(0x76867682, 0xA20E0098, "Memory");
+	__writeMemory32(0x76867682, 0xA20E009C, "Memory");
+}
+
+/* Disable MPU */
+__writeMemory32(0x00000000, 0xE000ED94, "Memory");
+
+__message "FINISH Executing execUserReset() function"; 
+}
+

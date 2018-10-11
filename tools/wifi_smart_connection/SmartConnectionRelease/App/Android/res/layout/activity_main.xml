@@ -1,0 +1,193 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    tools:context="com.mediatek.demo.smartconnection.MainActivity" >
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/watcher"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="#ff0000"/>
+    
+    <TableLayout android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/watcher"
+        android:layout_marginTop="5dp">
+        <TableRow android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/wifi_ap_name"
+                android:layout_weight="1"
+                android:layout_gravity="start|bottom"
+                android:id="@+id/tv_ap_name"/>
+            <EditText android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_name"
+                android:layout_weight="15"
+                android:textSize="15sp"
+                android:singleLine="true"
+                android:inputType="textVisiblePassword"
+                android:id="@+id/et_name"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/wifi_ap_psw"
+                android:id="@+id/tv_ap_psw"
+                android:layout_weight="1"
+                android:layout_gravity="start|bottom"/>
+            <EditText android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_password"
+                android:layout_weight="15"
+                android:textSize="15sp"
+                android:singleLine="true"
+                android:inputType="textVisiblePassword"
+                android:id="@+id/et_psw"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cus_info"
+                android:id="@+id/tv_custom_info"
+                android:layout_weight="1"
+                android:layout_gravity="start|bottom"/>
+            <EditText android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_custom_info"
+                android:layout_weight="15"
+                android:textSize="15sp"
+                android:singleLine="true"
+                android:inputType="textVisiblePassword"
+                android:id="@+id/et_custom_info"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/encryption_key_label"
+                android:id="@+id/tv_encryption_key"
+                android:layout_weight="1"
+                android:layout_gravity="start|bottom"/>
+            <EditText android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/encryption_key_hint"
+                android:layout_weight="15"
+                android:textSize="15sp"
+                android:singleLine="true"
+                android:id="@+id/et_encryption_key"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/send_interval"
+                android:id="@+id/tv_interval"
+                android:layout_weight="1"
+                android:layout_gravity="start|bottom"/>
+            <EditText android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/v1v4_interval"
+                android:layout_weight="15"
+                android:textSize="15sp"
+                android:singleLine="true"
+                android:inputType="numberDecimal"
+                android:id="@+id/et_v1v4_interval"/>
+            <EditText android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/v5_interval"
+                android:layout_weight="15"
+                android:textSize="15sp"
+                android:singleLine="true"
+                android:inputType="numberDecimal"
+                android:id="@+id/et_v5_interval"/>
+        </TableRow>
+    </TableLayout>
+    
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/type_header"
+        android:layout_below="@id/tab_layout"
+        android:layout_marginTop="15dp"
+        android:text="@string/type"/>
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/version_linear"
+        android:layout_below="@id/type_header">
+        <CheckBox android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/v1"
+            android:id="@+id/checkbox_v1"/>
+        <CheckBox android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/v4"
+            android:id="@+id/checkbox_v4"/>
+        <CheckBox android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/v5"
+            android:id="@+id/checkbox_v5"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_linear"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/version_linear"
+        android:orientation="horizontal">
+        <Button android:id="@+id/btn_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#6E8B3D"
+            android:layout_marginEnd="5dp"
+            android:textSize="15sp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/start"/>
+
+        <ProgressBar
+            android:id="@+id/sending_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            android:layout_weight="1.3" />
+
+        <Button android:id="@+id/btn_stop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_weight="1"
+            android:textSize="15sp"
+            android:layout_marginStart="5dp"
+            android:background="#FF0000"
+            android:text="@string/stop"/>
+    </LinearLayout>
+
+</RelativeLayout>

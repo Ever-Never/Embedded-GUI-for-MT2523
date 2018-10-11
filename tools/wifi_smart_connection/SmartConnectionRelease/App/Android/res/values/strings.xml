@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SmartConnection</string>
+    <string name="wifi_ap_name">AP Name</string>
+    <string name="wifi_ap_psw">AP PSW</string>
+    <string name="cus_info">Custom Info</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="get_version">Get Version</string>
+    <string name="hint_name">Please Input Name</string>
+    <string name="hint_password">Please Input Password</string>
+    <string name="hint_custom_info">Please Input Custom Info(or Empty)</string>
+    <string name="default_version">Failed to get version</string>
+    <string name="error_hint">Error</string>
+    <string name="warning">Warning</string>
+    <string name="type">Version</string>
+    <string name="v1">v1</string>
+    <string name="v4">v4</string>
+    <string name="v5">v5</string>
+    <string name="warning_input_name_and_password">Please Input Name and Password!!</string>
+    <string name="ok">OK</string>
+    <string name="warning_select_1_type_to_send">Please Select 1 Type To Send</string>
+    <string name="wifi_not_connected">Please connect WiFi\nAnd try again</string>
+    
+    <string name="error_not_inited">Not Inited</string>
+    <string name="error_wrong_type">Wrong Type</string>
+    <string name="error_wrong_parameter">Wrong Parameter</string>
+    <string name="error_crypt_failed">Crypt Failed</string>
+    <string name="error_not_enough_memory">Not Enough Memory</string>
+    <string name="error_exceed_max_length">Exceed Max Length</string>
+    <string name="error_already_started">Already Started</string>
+    <string name="error_already_stopped">Already Stopped</string>
+    <string name="error_failed_to_start">Failed To Start</string>
+    <string name="error_unkonwn_error">Unknonw Error</string>
+    
+    <string name="error_select_leat_1_version">Please select version to send</string>
+    <string name="init_failed">Failed to init smart connection</string>
+    <string name="start_failed">Failed to start smart connection</string>
+    <string name="stop_failed">Failed to Stop smart connection</string>
+    
+    <string name="encryption_key_label">Encryption Key</string>
+    <string name="encryption_key_hint">Encryption Key (Length Must Be 16)</string>
+    
+    <string name="v1v4_interval">V1/V4</string>
+    <string name="v5_interval">V5</string>
+    <string name="send_interval">Interval (ms)</string>
+
+</resources>

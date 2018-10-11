@@ -1,0 +1,27 @@
+IC_CONFIG                             = mt2523
+BOARD_CONFIG                          = mt2523_hdk
+SCREEN_CONFIG						  = mt2523_hdk
+
+# CTP module on
+MTK_CTP_ENABLE = y
+
+# combo sensor of accelerometer and gyroscope
+MT2511_E1 = y
+MT2511_INTERFACE = SPI
+MTK_SENSOR_BIO_USE = MT2511
+#MTK_SENSOR_ACCELEROMETER_USE = BMA255
+
+# fusion algorithm
+#FUSION_PEDOMETER_USE = M_INHOUSE_PEDOMETER
+#FUSION_SLEEP_TRACKER_USE = M_INHOUSE_SLEEP_TRACKER
+FUSION_HEART_RATE_MONITOR_USE = M_INHOUSE_HEART_RATE_MONITOR
+# Note HRV and B.P. are "exclusive"!!!
+FUSION_HEART_RATE_VARIABILITY_USE = M_INHOUSE_HEART_RATE_VARIABILITY
+#FUSION_BLOOD_PRESSURE_USE = M_INHOUSE_BLOOD_PRESSURE
+# gnss
+MTK_GNSS_ENABLE = y
+
+MTK_NVDM_ENABLE = y
+
+# TE enable, enable this feature will avoid tearing effect
+MTK_TE_ENABLE = y

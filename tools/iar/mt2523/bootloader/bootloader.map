@@ -1,0 +1,637 @@
+###############################################################################
+#
+# IAR ELF Linker V7.50.1.10123/W32 for ARM                13/Apr/2017  10:58:10
+# Copyright 2007-2015 IAR Systems AB.
+#
+#    Output file  =  
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Exe\bootloader.out
+#    Map file     =  
+#        R:\geneva\gva\project\mt2523_hdk\apps\bootloader\EWARM\..\..\..\..\..\out_iar\mt2523_hdk\bootloader\Debug\List\bootloader.map
+#    Command line =  
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\bl_clock.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\bl_dbgprint.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\bl_dcxo_cal.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\bl_fota.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\bl_gpt.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\bl_main.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\bl_max14745.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\bl_misc.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\bl_msdc.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\bl_mt6385.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\bl_pmic.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\bl_sd.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\bl_sd_internal.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\bl_uart.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\bl_usb.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\custom_blconfig.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\diskio.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\emi_init.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\ff.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\hal_flash_cfi.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\hal_flash_combo_init.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\hal_flash_combo_nor.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\hal_flash_custom.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\hal_flash_custom_sfi.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\hal_flash_disk.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\hal_flash_mtd.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\hal_flash_mtd_common.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\hal_flash_mtd_dal.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\hal_i2c_master_internal.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\hal_i2c_pmic.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\hal_log.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\lzma_decode_interface.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\lzma_decoder.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\memory_test.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\sha1.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\startup_mt2523.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\syscall.o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj\unicode.o
+#        --redirect _Printf=_PrintfTiny --redirect _Scanf=_ScanfSmall -o
+#        R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Exe\bootloader.out
+#        --map
+#        R:\geneva\gva\project\mt2523_hdk\apps\bootloader\EWARM\..\..\..\..\..\out_iar\mt2523_hdk\bootloader\Debug\List\bootloader.map
+#        --config
+#        R:\geneva\gva\project\mt2523_hdk\apps\bootloader\EWARM\flash.icf
+#        --diag_suppress Lc059,Lp005,Lp006 --semihosting --entry
+#        __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at start of [0x04006000-0x04028000] { section .reset_handler };
+"P1":  place in [from 0x04006000 to 0x04028000] { section .tcm_code };
+"P3":  place in [from 0x04006000 to 0x04028000] { section .tcm_rwdata };
+"P5":  place in [from 0x04006000 to 0x04028000] { ro };
+"P6":  place in [from 0x04006000 to 0x04028000] { rw };
+"A2":  place at end of [0x04006000-0x04028000] { block CSTACK };
+
+  Section          Kind        Address    Size  Object
+  -------          ----        -------    ----  ------
+"A1":                                     0x38
+  .reset_handler   ro code  0x04006000    0x38  startup_mt2523.o [1]
+                          - 0x04006038    0x38
+
+"P1":                                    0x1e0
+  .tcm_code        ro code  0x04006038   0x100  bl_gpt.o [1]
+  .tcm_code        ro code  0x04006138    0xc8  hal_flash_mtd_common.o [1]
+  .tcm_code        ro code  0x04006200    0x18  hal_flash_mtd_dal.o [1]
+                          - 0x04006218   0x1e0
+
+"P3":                                      0xc
+  .tcm_rwdata      rw data  0x04006218     0xc  bl_gpt.o [1]
+                          - 0x04006224     0xc
+
+"P5":                                   0x82a0
+  .text            ro code  0x04006224  0x195c  lzma_decoder.o [1]
+  .text            ro code  0x04007b80    0x76  ABImemcpy_unaligned.o [5]
+  .text            ro code  0x04007bf8  0x1424  sha1.o [1]
+  .text            ro code  0x0400901c    0x3a  ABImemset48.o [5]
+  .text            ro code  0x04009058  0x1118  bl_fota.o [1]
+  .text            ro code  0x0400a170   0x338  bl_dbgprint.o [1]
+  .text            ro code  0x0400a4a8    0x1e  custom_blconfig.o [1]
+  .text            ro code  0x0400a4c8   0x2c0  lzma_decode_interface.o [1]
+  .text            ro code  0x0400a788   0x2f0  hal_flash_disk.o [1]
+  .text            ro code  0x0400aa78   0x1d4  bl_uart.o [1]
+  .ram_code        ro code  0x0400ac4c   0x170  hal_flash_mtd.o [1]
+  .text            ro code  0x0400adbc     0xa  hal_flash_custom.o [1]
+  .text            ro code  0x0400adc8   0x460  hal_flash_combo_nor.o [1]
+  .text            ro code  0x0400b228    0xf0  hal_flash_combo_init.o [1]
+  .text            ro code  0x0400b318   0x2b0  hal_flash_mtd_dal.o [1]
+  .ram_code        ro code  0x0400b5c8    0x76  hal_flash_cfi.o [1]
+  .ram_code        ro code  0x0400b640   0x70c  hal_flash_mtd_dal.o [1]
+  .ram_code        ro code  0x0400bd4c   0x278  hal_flash_mtd_common.o [1]
+  .text            ro code  0x0400bfc4   0x7b4  bl_clock.o [1]
+  .text            ro code  0x0400c778   0x554  emi_init.o [1]
+  .text            ro code  0x0400cccc   0x22c  memory_test.o [1]
+  .text            ro code  0x0400cef8   0x31c  bl_main.o [1]
+  .text            ro code  0x0400d214   0x2c0  bl_dcxo_cal.o [1]
+  .text            ro code  0x0400d4d4   0x24c  bl_pmic.o [1]
+  .ram_code        ro code  0x0400d720    0xf8  hal_flash_custom_sfi.o [1]
+  .text            ro code  0x0400d818    0x6c  bl_misc.o [1]
+  .text            ro code  0x0400d884   0x1a4  hal_i2c_pmic.o [1]
+  .text            ro code  0x0400da28   0x1c4  bl_usb.o [1]
+  .text            ro code  0x0400dbec   0x214  bl_mt6385.o [1]
+  .text            ro code  0x0400de00    0x6c  bl_max14745.o [1]
+  .ram_code        ro code  0x0400de6c    0xf8  hal_flash_combo_init.o [1]
+  .text            ro code  0x0400df64   0x24c  hal_i2c_master_internal.o [1]
+  .text            ro code  0x0400e1b0     0x6  hal_log.o [1]
+  .ram_rodata      const    0x0400e1b8   0x220  hal_flash_custom_sfi.o [1]
+  .text            ro code  0x0400e3d8    0x40  zero_init3.o [5]
+  .text            ro code  0x0400e418    0x28  data_init.o [5]
+  .text            ro code  0x0400e440    0x22  fpinit_M.o [4]
+  .iar.init_table  const    0x0400e464    0x10  - Linker created -
+  .text            ro code  0x0400e474    0x1a  cmain.o [5]
+  .text            ro code  0x0400e48e     0x4  low_level_init.o [3]
+  .text            ro code  0x0400e492     0x4  exit.o [3]
+  .text            ro code  0x0400e498     0xa  cexit.o [5]
+  .text            ro code  0x0400e4a4    0x14  exit.o [6]
+  .text            ro code  0x0400e4b8     0xc  cstartup_M.o [5]
+  .rodata          const    0x0400e4c4     0x0  zero_init3.o [5]
+                          - 0x0400e4c4  0x82a0
+
+"P6", part 1 of 2:                        0xc9
+  .data            rw data  0x0400e4c4    0x68  emi_init.o [1]
+  .data            rw data  0x0400e52c    0x34  bl_fota.o [1]
+  .data            rw data  0x0400e560    0x10  hal_i2c_master_internal.o [1]
+  .intvec          rw data  0x0400e570     0x8  startup_mt2523.o [1]
+  .data            rw data  0x0400e578     0x4  bl_dcxo_cal.o [1]
+  .data            rw data  0x0400e57c     0x4  bl_usb.o [1]
+  .data            rw data  0x0400e580     0x4  hal_flash_mtd.o [1]
+  .data            rw data  0x0400e584     0x4  hal_flash_mtd_dal.o [1]
+  .data            rw data  0x0400e588     0x2  hal_flash_combo_init.o [1]
+  .data            rw data  0x0400e58a     0x2  hal_flash_combo_init.o [1]
+  .data            rw data  0x0400e58c     0x1  hal_flash_disk.o [1]
+                          - 0x0400e58d    0xc9
+
+"P6", part 2 of 2:                      0xaf1c
+  .noinit          zero     0x0400e590  0xa000  bl_fota.o [1]
+  .noinit          zero     0x04018590   0x800  bl_fota.o [1]
+  .bss             zero     0x04018d90   0x200  bl_dbgprint.o [1]
+  .bss             zero     0x04018f90   0x190  memory_test.o [1]
+  .bss             zero     0x04019120   0x168  hal_flash_combo_nor.o [1]
+  .bss             zero     0x04019288    0xe4  hal_flash_combo_nor.o [1]
+  .bss             zero     0x0401936c    0x80  hal_flash_mtd_dal.o [1]
+  .bss             zero     0x040193ec    0x54  memory_test.o [1]
+  .bss             zero     0x04019440    0x18  bl_dbgprint.o [1]
+  .bss             zero     0x04019458    0x18  bl_dbgprint.o [1]
+  .bss             zero     0x04019470    0x10  hal_flash_combo_nor.o [1]
+  .bss             zero     0x04019480     0xc  emi_init.o [1]
+  .bss             zero     0x0401948c     0xc  hal_flash_mtd.o [1]
+  .bss             zero     0x04019498     0x8  bl_pmic.o [1]
+  .bss             zero     0x040194a0     0x4  bl_fota.o [1]
+  .bss             zero     0x040194a4     0x4  hal_flash_custom_sfi.o [1]
+  .bss             zero     0x040194a8     0x1  bl_dbgprint.o [1]
+  .bss             zero     0x040194a9     0x1  hal_flash_mtd.o [1]
+  .bss             zero     0x040194aa     0x1  hal_flash_mtd.o [1]
+                          - 0x040194ab  0xaf1b
+
+"A2":                                    0x400
+  CSTACK                    0x04027c00   0x400  <Block>
+    CSTACK         uninit   0x04027c00   0x400  <Block tail>
+                          - 0x04028000   0x400
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0xaf1b:
+          0x0400e590  0xaf1b
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                     ro code  ro data  rw data
+    ------                     -------  -------  -------
+R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj: [1]
+    bl_clock.o                   1 972
+    bl_dbgprint.o                  824               561
+    bl_dcxo_cal.o                  704                 4
+    bl_fota.o                    4 376            43 064
+    bl_gpt.o                       256                12
+    bl_main.o                      796
+    bl_max14745.o                  108
+    bl_misc.o                      108
+    bl_mt6385.o                    532
+    bl_pmic.o                      588                 8
+    bl_uart.o                      468
+    bl_usb.o                       452                 4
+    custom_blconfig.o               30
+    emi_init.o                   1 364               116
+    hal_flash_cfi.o                118
+    hal_flash_combo_init.o         488                 4
+    hal_flash_combo_nor.o        1 120               604
+    hal_flash_custom.o              10
+    hal_flash_custom_sfi.o         248      544        4
+    hal_flash_disk.o               752                 1
+    hal_flash_mtd.o                368                18
+    hal_flash_mtd_common.o         832
+    hal_flash_mtd_dal.o          2 516               132
+    hal_i2c_master_internal.o      588                16
+    hal_i2c_pmic.o                 420
+    hal_log.o                        6
+    lzma_decode_interface.o        704
+    lzma_decoder.o               6 492
+    memory_test.o                  556               484
+    sha1.o                       5 156
+    startup_mt2523.o                56                 8
+    ----------------------------------------------------
+    Total:                      33 008      544   45 040
+
+command line: [2]
+    ----------------------------------------------------
+    Total:
+
+dl7M_tlf.a: [3]
+    exit.o                           4
+    low_level_init.o                 4
+    ----------------------------------------------------
+    Total:                           8
+
+m7M_tls.a: [4]
+    fpinit_M.o                      34
+    ----------------------------------------------------
+    Total:                          34
+
+rt7M_tl.a: [5]
+    ABImemcpy_unaligned.o          118
+    ABImemset48.o                   58
+    cexit.o                         10
+    cmain.o                         26
+    cstartup_M.o                    12
+    data_init.o                     40
+    zero_init3.o                    64
+    ----------------------------------------------------
+    Total:                         328
+
+shb_l.a: [6]
+    exit.o                          20
+    ----------------------------------------------------
+    Total:                          20
+
+    Gaps                            14        4
+    Linker created                           16    1 024
+--------------------------------------------------------
+    Grand Total:                33 412      564   46 064
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address    Size  Type      Object
+-----                      -------    ----  ----      ------
+.iar.init_table$$Base   0x0400e464           --   Gb  - Linker created -
+.iar.init_table$$Limit  0x0400e474           --   Gb  - Linker created -
+?main                   0x0400e475          Code  Gb  cmain.o [5]
+BankInfo                0x040191a8    0x40  Data  Lc  hal_flash_combo_nor.o [1]
+BlockAddress            0x0400ac4d    0x3a  Code  Gb  hal_flash_mtd.o [1]
+BlockIndex              0x0400ad69    0x50  Code  Gb  hal_flash_mtd.o [1]
+BlockLayout             0x0401947c     0x4  Data  Lc  hal_flash_combo_nor.o [1]
+BlockSize               0x0400ad47    0x22  Code  Gb  hal_flash_mtd.o [1]
+CMEM_BlockSize          0x0400adf3     0x6  Code  Gb  hal_flash_combo_nor.o [1]
+CMEM_BlockSize_Internal
+                        0x0400adc9    0x2a  Code  Gb  hal_flash_combo_nor.o [1]
+CMEM_CheckValidDeviceID
+                        0x0400b229    0x3e  Code  Gb  hal_flash_combo_init.o [1]
+CMEM_EMIINIT_CheckValidDeviceID
+                        0x0400dec9    0x3c  Code  Gb  hal_flash_combo_init.o [1]
+CMEM_EMIINIT_Index      0x0400df05    0x56  Code  Gb  hal_flash_combo_init.o [1]
+CMEM_EMIINIT_ReadID     0x0400de6d    0x5c  Code  Gb  hal_flash_combo_init.o [1]
+CMEM_GetIDEntry         0x0400b2c5    0x10  Code  Gb  hal_flash_combo_init.o [1]
+CMEM_Index              0x0400b267    0x58  Code  Gb  hal_flash_combo_init.o [1]
+CMEM_Init_FullDriver    0x0400aebb    0xaa  Code  Gb  hal_flash_combo_nor.o [1]
+CMEM_Init_nor_list      0x0400ae99    0x22  Code  Gb  hal_flash_combo_nor.o [1]
+CMEM_NOR_Construct_RegionInfo_Internal
+                        0x0400ae1b    0x5c  Code  Gb  hal_flash_combo_nor.o [1]
+CSTACK$$Base            0x04027c00           --   Gb  - Linker created -
+CSTACK$$Limit           0x04028000           --   Gb  - Linker created -
+Custom_NOR_Init         0x0400adc3     0x4  Code  Gb  hal_flash_custom.o [1]
+Decode2Ram              0x0400a559   0x184  Code  Lc  lzma_decode_interface.o [1]
+DelayAWhile_UST         0x0400adb9     0x4  Code  Gb  hal_flash_mtd.o [1]
+EMI_DSRAM_VAL           0x0400e500     0x4  Data  Gb  emi_init.o [1]
+EMI_GENA_VAL            0x0400e4f8     0x4  Data  Gb  emi_init.o [1]
+EMI_IDL_C_VAL           0x0400e508     0x4  Data  Gb  emi_init.o [1]
+EMI_IDL_D_VAL           0x0400e50c     0x4  Data  Gb  emi_init.o [1]
+EMI_IDL_E_VAL           0x0400e510     0x4  Data  Gb  emi_init.o [1]
+EMI_IO_A_VAL            0x0400e524     0x4  Data  Gb  emi_init.o [1]
+EMI_IO_B_VAL            0x0400e528     0x4  Data  Gb  emi_init.o [1]
+EMI_MSRAM_VAL           0x0400e504     0x4  Data  Gb  emi_init.o [1]
+EMI_ODL_C_VAL           0x0400e514     0x4  Data  Gb  emi_init.o [1]
+EMI_ODL_D_VAL           0x0400e518     0x4  Data  Gb  emi_init.o [1]
+EMI_ODL_E_VAL           0x0400e51c     0x4  Data  Gb  emi_init.o [1]
+EMI_ODL_F_VAL           0x0400e520     0x4  Data  Gb  emi_init.o [1]
+EMI_PowerOn_Init        0x0400c905    0x46  Code  Gb  emi_init.o [1]
+EMI_RDCT_VAL            0x0400e4fc     0x4  Data  Gb  emi_init.o [1]
+EntireDiskDriveData     0x04019120    0x84  Data  Gb  hal_flash_combo_nor.o [1]
+EntireDiskMtdData       0x04019288    0xe4  Data  Gb  hal_flash_combo_nor.o [1]
+EntireDiskRegionInfo    0x04019248    0x40  Data  Lc  hal_flash_combo_nor.o [1]
+JumpCmd                 0x04006023          Code  Gb  startup_mt2523.o [1]
+LookupAddress           0x0400ac87    0xa8  Code  Lc  hal_flash_mtd.o [1]
+LzmaDec_Allocate        0x04007af5    0x80  Code  Gb  lzma_decoder.o [1]
+LzmaDec_AllocateProbs2  0x04007ab1    0x44  Code  Lc  lzma_decoder.o [1]
+LzmaDec_DecodeReal      0x04006225   0xfc2  Code  Lc  lzma_decoder.o [1]
+LzmaDec_DecodeReal2     0x04007245    0x6a  Code  Lc  lzma_decoder.o [1]
+LzmaDec_DecodeToBuf     0x04007973    0xae  Code  Gb  lzma_decoder.o [1]
+LzmaDec_DecodeToDic     0x0400772d   0x246  Code  Gb  lzma_decoder.o [1]
+LzmaDec_Free            0x04007a45    0x14  Code  Gb  lzma_decoder.o [1]
+LzmaDec_FreeDict        0x04007a33    0x12  Code  Lc  lzma_decoder.o [1]
+LzmaDec_FreeProbs       0x04007a21    0x12  Code  Gb  lzma_decoder.o [1]
+LzmaDec_Init            0x040076e9     0xa  Code  Gb  lzma_decoder.o [1]
+LzmaDec_InitDicAndState
+                        0x040076c7    0x22  Code  Gb  lzma_decoder.o [1]
+LzmaDec_InitStateReal   0x040076f3    0x3a  Code  Lc  lzma_decoder.o [1]
+LzmaDec_TryDummy        0x040072af   0x418  Code  Lc  lzma_decoder.o [1]
+LzmaDec_WriteRem        0x040071e7    0x5e  Code  Lc  lzma_decoder.o [1]
+LzmaProps_Decode        0x04007a59    0x58  Code  Gb  lzma_decoder.o [1]
+MapWindow               0x0400ad35    0x12  Code  Gb  hal_flash_mtd.o [1]
+MountDevice             0x0400a789    0x28  Code  Lc  hal_flash_disk.o [1]
+NORFlashMtd             0x040191e8    0x3c  Data  Gb  hal_flash_combo_nor.o [1]
+NOR_BlockIndex          0x0400a975     0xa  Code  Gb  hal_flash_disk.o [1]
+NOR_BlockSize           0x0400a96b     0xa  Code  Gb  hal_flash_disk.o [1]
+NOR_Construct_RegionInfo
+                        0x0400ae77    0x22  Code  Gb  hal_flash_combo_nor.o [1]
+NOR_FLASH_BUSY          0x040194a9     0x1  Data  Gb  hal_flash_mtd.o [1]
+NOR_FLASH_SUSPENDED     0x040194aa     0x1  Data  Gb  hal_flash_mtd.o [1]
+NOR_Get_FlashSizeFromBankInfo
+                        0x0400adf9    0x22  Code  Gb  hal_flash_combo_nor.o [1]
+NOR_ReadID              0x0400b5c9    0x76  Code  Gb  hal_flash_cfi.o [1]
+NOR_init                0x0400a94b    0x20  Code  Gb  hal_flash_disk.o [1]
+PAGE_BUFFER_SIZE        0x040191a4     0x4  Data  Gb  hal_flash_combo_nor.o [1]
+Region$$Table$$Base     0x0400e464           --   Gb  - Linker created -
+Region$$Table$$Limit    0x0400e474           --   Gb  - Linker created -
+RestoreIRQMask          0x0400b645     0x2  Code  Gb  hal_flash_mtd_dal.o [1]
+SFI_Dev_Command         0x040061b7    0x3a  Code  Gb  hal_flash_mtd_common.o [1]
+SFI_Dev_CommandAddress  0x0400bd65    0x40  Code  Gb  hal_flash_mtd_common.o [1]
+SFI_Dev_Command_Ext     0x0400be6b    0x70  Code  Gb  hal_flash_mtd_common.o [1]
+SFI_Dev_Command_List    0x0400bedb    0xd8  Code  Gb  hal_flash_mtd_common.o [1]
+SFI_GPRAM_Write         0x0400be03    0x68  Code  Gb  hal_flash_mtd_common.o [1]
+SFI_GPRAM_Write_C1A3    0x0400bda5    0x14  Code  Gb  hal_flash_mtd_common.o [1]
+SFI_GPRAM_Write_C1A4    0x0400bdb9    0x4a  Code  Gb  hal_flash_mtd_common.o [1]
+SFI_MacEnable           0x04006139    0x2c  Code  Gb  hal_flash_mtd_common.o [1]
+SFI_MacLeave            0x04006165    0x20  Code  Gb  hal_flash_mtd_common.o [1]
+SFI_MacTrigger          0x04006185    0x22  Code  Gb  hal_flash_mtd_common.o [1]
+SFI_MacWaitReady        0x040061a7    0x10  Code  Gb  hal_flash_mtd_common.o [1]
+SFI_ReverseByteOrder    0x0400bd4d    0x18  Code  Gb  hal_flash_mtd_common.o [1]
+SF_DAL_CheckDeviceReady
+                        0x0400b9f3    0xb6  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_CheckReadyAndResume
+                        0x0400b973    0x80  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_Dev_Command      0x0400bc31    0x32  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_Dev_Command_Ext  0x0400bc89    0x2c  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_Dev_EraseBlock   0x0400bbc7    0x32  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_Dev_ReadID       0x0400bb0f    0x30  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_Dev_ReadStatus   0x0400bbf9    0x38  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_Dev_Resume       0x0400bb8d    0x30  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_Dev_Suspend      0x0400bb3f    0x4e  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_Dev_WaitReady_EMIINIT
+                        0x0400bcb5    0x2c  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_Dev_WriteEnable  0x0400bbbd     0xa  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_EraseBlock       0x0400b879    0xf4  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_FLAG_BUSY_CLR    0x0400b711    0x14  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_FLAG_BUSY_SET    0x0400b6fd    0x14  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_FLAG_SUS_CLR     0x0400b739    0x14  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_FLAG_SUS_SET     0x0400b725    0x14  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_FailCheck        0x0400baeb    0x24  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_IOCtrl           0x0400b59d    0x2c  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_Init_Common      0x0400b3ed    0xbc  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_Init_Driver      0x0400b52f    0x6c  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_Init_MXIC        0x0400b319    0x80  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_Init_Vendor      0x0400b4d9    0x56  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_Init_WINBOND     0x0400b399    0x50  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_Init_WINBOND_OTP
+                        0x0400b3e9     0x4  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_LockEraseBlkAddr
+                        0x0400bae7     0x4  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_MountDevice      0x0400b64b    0x60  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_NonBlockEraseBlock
+                        0x0400b96d     0x6  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_ProgramData      0x0400b74d   0x12c  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_ResumeErase      0x0400badd     0xa  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_ShutDown         0x0400b6ab    0x52  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_SuspendErase     0x0400baa9    0x34  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_UnlockBlock_MXIC
+                        0x0400bce1    0x6c  Code  Gb  hal_flash_mtd_dal.o [1]
+SF_DAL_UnlockBlock_None
+                        0x0400b647     0x4  Code  Gb  hal_flash_mtd_dal.o [1]
+SaveAndSetIRQMask       0x0400b641     0x4  Code  Gb  hal_flash_mtd_dal.o [1]
+StatusMap               0x04019224     0x8  Data  Gb  hal_flash_combo_nor.o [1]
+TestCase_MBIST          0x0400c963    0x72  Code  Gb  emi_init.o [1]
+Write2Flash             0x0400a4c9    0x90  Code  Lc  lzma_decode_interface.o [1]
+__EMI_CurSR0            0x04019480     0x4  Data  Gb  emi_init.o [1]
+__EMI_CurSR1            0x04019484     0x4  Data  Gb  emi_init.o [1]
+__EMI_CurSR2            0x04019488     0x4  Data  Gb  emi_init.o [1]
+__EMI_DataAutoTrackingMbistTest
+                        0x0400c9d5    0x14  Code  Gb  emi_init.o [1]
+__EMI_EnableBandwidthLimiter
+                        0x0400c94b    0x18  Code  Gb  emi_init.o [1]
+__EMI_EnableDataAutoTracking
+                        0x0400c9e9    0x4c  Code  Gb  emi_init.o [1]
+__EMI_GetSR             0x0400c779    0x1e  Code  Gb  emi_init.o [1]
+__EMI_SetRegValfromCMCP
+                        0x0400c797    0x3a  Code  Gb  emi_init.o [1]
+__aeabi_memset4         0x0400901d          Code  Gb  ABImemset48.o [5]
+__aeabi_memset8         0x0400901d          Code  Gb  ABImemset48.o [5]
+__cmain                 0x0400e475          Code  Gb  cmain.o [5]
+__exit                  0x0400e4a5    0x14  Code  Gb  exit.o [6]
+__iar_Memset4_word      0x04009025          Code  Gb  ABImemset48.o [5]
+__iar_Memset8_word      0x04009025          Code  Gb  ABImemset48.o [5]
+__iar_data_init3        0x0400e419    0x28  Code  Gb  data_init.o [5]
+__iar_init_vfp          0x0400e441          Code  Gb  fpinit_M.o [4]
+__iar_program_start     0x0400e4b9          Code  Gb  cstartup_M.o [5]
+__iar_unaligned___aeabi_memcpy
+                        0x04007b81          Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_unaligned___aeabi_memcpy4
+                        0x04007ba1          Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_unaligned___aeabi_memcpy8
+                        0x04007ba1          Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_zero_init3        0x0400e3d9    0x40  Code  Gb  zero_init3.o [5]
+__low_level_init        0x0400e48f     0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x0400e570          Data  Gb  startup_mt2523.o [1]
+_call_main              0x0400e481          Code  Gb  cmain.o [5]
+_exit                   0x0400e499          Code  Gb  cexit.o [5]
+_main                   0x0400e48b          Code  Gb  cmain.o [5]
+bl_alloc                0x04009059    0x68  Code  Gb  bl_fota.o [1]
+bl_bonding_io_reg       0x0400d819    0x5a  Code  Gb  bl_misc.o [1]
+bl_clock_freq_monitor   0x0400bfc5    0xe0  Code  Gb  bl_clock.o [1]
+bl_custom_cm4_start_address
+                        0x0400a4af     0x4  Code  Gb  custom_blconfig.o [1]
+bl_custom_fota_size     0x0400a4c1     0x6  Code  Gb  custom_blconfig.o [1]
+bl_custom_fota_start_address
+                        0x0400a4b3     0x4  Code  Gb  custom_blconfig.o [1]
+bl_custom_rom_baseaddr  0x0400a4a9     0x6  Code  Gb  custom_blconfig.o [1]
+bl_d2d_io_pull_down     0x0400d873     0x8  Code  Gb  bl_misc.o [1]
+bl_dcxo_capid_init      0x0400d345    0x30  Code  Gb  bl_dcxo_cal.o [1]
+bl_dcxo_load_calibration
+                        0x0400d30f    0x36  Code  Gb  bl_dcxo_cal.o [1]
+bl_fota_check_updating_marker
+                        0x04009863    0x48  Code  Lc  bl_fota.o [1]
+bl_fota_compress_update
+                        0x040090cb    0xce  Code  Gb  bl_fota.o [1]
+bl_fota_do_update       0x04009359   0x148  Code  Gb  bl_fota.o [1]
+bl_fota_get_block_size_length
+                        0x04009199    0x38  Code  Gb  bl_fota.o [1]
+bl_fota_integrity_check
+                        0x040094a1   0x1dc  Code  Gb  bl_fota.o [1]
+bl_fota_is_triggered    0x040098d1    0x4c  Code  Gb  bl_fota.o [1]
+bl_fota_is_updating     0x040098b5    0x1c  Code  Gb  bl_fota.o [1]
+bl_fota_load_and_check_fota_header
+                        0x0400967d    0xce  Code  Gb  bl_fota.o [1]
+bl_fota_process         0x0400991d    0x4a  Code  Gb  bl_fota.o [1]
+bl_fota_read_update_info
+                        0x04009807    0x5c  Code  Gb  bl_fota.o [1]
+bl_fota_update_main     0x0400974b    0xbc  Code  Gb  bl_fota.o [1]
+bl_fota_update_progress
+                        0x040092fb    0x5e  Code  Gb  bl_fota.o [1]
+bl_fota_write_marker    0x04009291    0x38  Code  Gb  bl_fota.o [1]
+bl_fota_write_update_info
+                        0x040091d1    0xc0  Code  Gb  bl_fota.o [1]
+bl_fota_write_update_status
+                        0x040092c9    0x32  Code  Gb  bl_fota.o [1]
+bl_free                 0x040090c1     0xa  Code  Gb  bl_fota.o [1]
+bl_gpt_delay_ms         0x040060b3    0x2e  Code  Gb  bl_gpt.o [1]
+bl_gpt_delay_time       0x04006039    0x3a  Code  Lc  bl_gpt.o [1]
+bl_gpt_delay_us         0x0400608d    0x26  Code  Gb  bl_gpt.o [1]
+bl_gpt_get_free_run_count
+                        0x040060e1    0x4e  Code  Gb  bl_gpt.o [1]
+bl_gpt_start_free_run_timer
+                        0x04006073    0x1a  Code  Lc  bl_gpt.o [1]
+bl_hardware_init        0x0400cef9   0x118  Code  Gb  bl_main.o [1]
+bl_itoa                 0x0400a171    0x62  Code  Lc  bl_dbgprint.o [1]
+bl_itof                 0x0400a1d3    0x44  Code  Lc  bl_dbgprint.o [1]
+bl_max14745_init        0x0400de01    0x22  Code  Gb  bl_max14745.o [1]
+bl_max14745_vcore_set_1p3v
+                        0x0400de23    0x1a  Code  Gb  bl_max14745.o [1]
+bl_max14745_vmc_vr_control
+                        0x0400de55    0x18  Code  Gb  bl_max14745.o [1]
+bl_max14745_vusb_vr_control
+                        0x0400de3d    0x18  Code  Gb  bl_max14745.o [1]
+bl_mt6385_init          0x0400dbed    0x38  Code  Gb  bl_mt6385.o [1]
+bl_mt6385_vcore_set_1p3v
+                        0x0400dc25    0xd0  Code  Gb  bl_mt6385.o [1]
+bl_mt6385_vmc_vr_control
+                        0x0400dd7b    0x86  Code  Gb  bl_mt6385.o [1]
+bl_mt6385_vusb_vr_control
+                        0x0400dcf5    0x86  Code  Gb  bl_mt6385.o [1]
+bl_null_vusb_vr_control
+                        0x0400d681     0x2  Code  Gb  bl_pmic.o [1]
+bl_pmic_get_register_value
+                        0x0400d5e7    0x3c  Code  Gb  bl_pmic.o [1]
+bl_pmic_i2c_read        0x0400d623    0x32  Code  Gb  bl_pmic.o [1]
+bl_pmic_i2c_write       0x0400d655    0x2a  Code  Gb  bl_pmic.o [1]
+bl_pmic_init            0x0400d4d5    0x96  Code  Gb  bl_pmic.o [1]
+bl_pmic_set_register_value
+                        0x0400d585    0x62  Code  Gb  bl_pmic.o [1]
+bl_pmic_vmc_vr_control  0x0401949c     0x4  Data  Gb  bl_pmic.o [1]
+bl_pmic_vusb_vr_control
+                        0x04019498     0x4  Data  Gb  bl_pmic.o [1]
+bl_print                0x0400a479    0x10  Code  Gb  bl_dbgprint.o [1]
+bl_print_internal       0x0400a217   0x262  Code  Gb  bl_dbgprint.o [1]
+bl_set_debug_level      0x0400a489     0x6  Code  Gb  bl_dbgprint.o [1]
+bl_set_usb_sleep        0x0400d011    0x3e  Code  Gb  bl_main.o [1]
+bl_start_user_code      0x0400d065    0x1e  Code  Gb  bl_main.o [1]
+bl_uart_init            0x0400aaaf   0x11c  Code  Gb  bl_uart.o [1]
+bl_uart_put_byte        0x0400aa8d    0x22  Code  Gb  bl_uart.o [1]
+bl_uart_read_reg        0x0400aa7d    0x10  Code  Lc  bl_uart.o [1]
+bl_uart_write_reg       0x0400aa79     0x4  Code  Lc  bl_uart.o [1]
+bl_usb_low_power_setting
+                        0x0400db5b    0x54  Code  Gb  bl_usb.o [1]
+buf                     0x04018d90   0x200  Data  Lc  bl_dbgprint.o [1]
+clock_set_pll_dcm_init  0x0400c0a5   0x4a0  Code  Gb  bl_clock.o [1]
+cmem_emiinit_index      0x0400e588     0x2  Data  Lc  hal_flash_combo_init.o [1]
+cmem_id                 0x04019474     0x4  Data  Gb  hal_flash_combo_nor.o [1]
+cmem_index              0x0400e58a     0x2  Data  Lc  hal_flash_combo_init.o [1]
+cmem_nor_index          0x04019470     0x4  Data  Lc  hal_flash_combo_nor.o [1]
+combo_mem_hw_list       0x0400e1b8   0x220  Data  Lc  hal_flash_custom_sfi.o [1]
+combo_mem_id_list       0x0400b2d4    0x44  Data  Gb  hal_flash_combo_init.o [1]
+combo_mem_sw_list       0x0400af70   0x2b8  Data  Lc  hal_flash_combo_nor.o [1]
+counter                 0x040193f0    0x50  Data  Gb  memory_test.o [1]
+custom_get_NORFLASH_Size
+                        0x0400adbd     0x6  Code  Gb  hal_flash_custom.o [1]
+custom_setAdvEMI        0x0400ca5d    0x8e  Code  Gb  emi_init.o [1]
+custom_setEMI           0x0400ca35    0x28  Code  Gb  emi_init.o [1]
+custom_setSFI           0x0400d721    0xa4  Code  Gb  hal_flash_custom_sfi.o [1]
+custom_setSFIExt        0x0400d7c5    0x2c  Code  Gb  hal_flash_custom_sfi.o [1]
+debug_info              0x04018f90   0x190  Data  Gb  memory_test.o [1]
+debug_level             0x040194a8     0x1  Data  Lc  bl_dbgprint.o [1]
+debug_node_counter      0x040193ec     0x4  Data  Gb  memory_test.o [1]
+debug_node_print        0x0400cda3    0x3e  Code  Gb  memory_test.o [1]
+drain_debug_buffer      0x0400ccf9    0x60  Code  Gb  memory_test.o [1]
+dump_EMI_Setting        0x0400c7d1   0x134  Code  Gb  emi_init.o [1]
+emi_settings            0x0400e4c4    0x34  Data  Gb  emi_init.o [1]
+eraseRawDiskBlock       0x0400a905    0x46  Code  Gb  hal_flash_disk.o [1]
+exit                    0x0400e493     0x4  Code  Gb  exit.o [3]
+flash_init_status       0x0400e58c     0x1  Data  Gb  hal_flash_disk.o [1]
+fota_head_buf           0x0400e52c    0x28  Data  Lc  bl_fota.o [1]
+gNOR_ReturnReadyEnd     0x0400e580     0x4  Data  Gb  hal_flash_mtd.o [1]
+g_current_capid         0x0400e578     0x4  Data  Gb  bl_dcxo_cal.o [1]
+g_i2c_source_clock_table
+                        0x0400e560    0x10  Data  Gb  hal_i2c_master_internal.o [1]
+get_block_size_from_address
+                        0x0400a9af    0x32  Code  Gb  hal_flash_disk.o [1]
+get_rawdisk_error_code  0x0400a97f    0x30  Code  Gb  hal_flash_disk.o [1]
+gpt_ms                  0x0400621c     0x4  Data  Gb  bl_gpt.o [1]
+gpt_us                  0x04006220     0x4  Data  Gb  bl_gpt.o [1]
+hal_flash_erase         0x0400a9eb    0x4c  Code  Gb  hal_flash_disk.o [1]
+hal_flash_init          0x0400a9e1     0xa  Code  Gb  hal_flash_disk.o [1]
+hal_flash_read          0x0400aa37    0x1c  Code  Gb  hal_flash_disk.o [1]
+hal_flash_write         0x0400aa53    0x1c  Code  Gb  hal_flash_disk.o [1]
+hal_usbphy_poweron_initialize
+                        0x0400da29    0x5e  Code  Gb  bl_usb.o [1]
+hal_usbphy_save_current
+                        0x0400da87    0xd4  Code  Gb  bl_usb.o [1]
+i2c_config_hardware     0x0400dff1   0x138  Code  Gb  hal_i2c_master_internal.o [1]
+i2c_get_transaction_status
+                        0x0400e161    0x40  Code  Gb  hal_i2c_master_internal.o [1]
+i2c_master_register     0x0400e1a0    0x10  Data  Gb  hal_i2c_master_internal.o [1]
+i2c_read_fifo           0x0400e145    0x1c  Code  Gb  hal_i2c_master_internal.o [1]
+i2c_set_frequency       0x0400df65    0x84  Code  Gb  hal_i2c_master_internal.o [1]
+i2c_write_fifo          0x0400e129    0x1c  Code  Gb  hal_i2c_master_internal.o [1]
+init_node               0x0400cd59    0x4a  Code  Gb  memory_test.o [1]
+log_hal_error_internal  0x0400e1b1     0x6  Code  Gb  hal_log.o [1]
+lzma_alloc              0x0400e558     0x8  Data  Gb  bl_fota.o [1]
+lzma_alloc_count        0x0400e554     0x4  Data  Lc  bl_fota.o [1]
+lzma_buf_0              0x0400e590  0x4000  Data  Lc  bl_fota.o [1]
+lzma_buf_1              0x04012590  0x4000  Data  Lc  bl_fota.o [1]
+lzma_buf_2              0x04016590  0x1000  Data  Lc  bl_fota.o [1]
+lzma_buf_3              0x04017590  0x1000  Data  Lc  bl_fota.o [1]
+lzma_decode2flash       0x0400a6dd    0xa6  Code  Gb  lzma_decode_interface.o [1]
+main                    0x0400d083    0x16  Code  Gb  bl_main.o [1]
+mbedtls_sha1_finish     0x04008f11    0xcc  Code  Gb  sha1.o [1]
+mbedtls_sha1_init       0x04007bf9     0x8  Code  Gb  sha1.o [1]
+mbedtls_sha1_process    0x04007c35  0x125c  Code  Gb  sha1.o [1]
+mbedtls_sha1_starts     0x04007c01    0x1c  Code  Gb  sha1.o [1]
+mbedtls_sha1_update     0x04008e9d    0x74  Code  Gb  sha1.o [1]
+memory_btmt_test        0x0400cde1     0xe  Code  Gb  memory_test.o [1]
+ms_init_falg            0x04006219     0x1  Data  Gb  bl_gpt.o [1]
+musb_phy                0x0400e57c     0x4  Data  Lc  bl_usb.o [1]
+nor_list                0x04019478     0x4  Data  Lc  hal_flash_combo_nor.o [1]
+page_buffer             0x04018590   0x800  Data  Lc  bl_fota.o [1]
+pmic_i2c_init           0x0400d885    0x18  Code  Gb  hal_i2c_pmic.o [1]
+pmic_i2c_send_polling   0x0400d89d    0x76  Code  Gb  hal_i2c_pmic.o [1]
+pmic_i2c_send_to_receive_polling
+                        0x0400d913    0x94  Code  Gb  hal_i2c_pmic.o [1]
+readRawDiskData         0x0400a7b1    0x36  Code  Gb  hal_flash_disk.o [1]
+read_efuse_capid        0x0400d2b1    0x5e  Code  Gb  bl_dcxo_cal.o [1]
+reset_debug_buffer      0x0400cccd    0x2c  Code  Gb  memory_test.o [1]
+set_capid               0x0400d215    0x9c  Code  Gb  bl_dcxo_cal.o [1]
+sf_dal_data_cmd         0x0401922c    0x1c  Data  Gb  hal_flash_combo_nor.o [1]
+sf_dal_resume_time      0x0400e584     0x4  Data  Gb  hal_flash_mtd_dal.o [1]
+sfi_index               0x040194a4     0x4  Data  Gb  hal_flash_custom_sfi.o [1]
+sha1_padding            0x04008fdc    0x40  Data  Lc  sha1.o [1]
+tmp_data_buffer         0x0401936c    0x80  Data  Lc  hal_flash_mtd_dal.o [1]
+us_init_falg            0x04006218     0x1  Data  Gb  bl_gpt.o [1]
+ust_get_current_time    0x04006201    0x18  Code  Gb  hal_flash_mtd_dal.o [1]
+writeRawDiskData        0x0400a7e7   0x11e  Code  Gb  hal_flash_disk.o [1]
+
+
+[1] = R:\geneva\gva\out_iar\mt2523_hdk\bootloader\Debug\Obj
+[2] = command line
+[3] = dl7M_tlf.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+  33 412 bytes of readonly  code memory
+     564 bytes of readonly  data memory
+  46 064 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

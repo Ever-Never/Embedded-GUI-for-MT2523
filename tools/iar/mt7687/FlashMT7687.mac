@@ -1,0 +1,44 @@
+__var RCC_CFGR;
+__var RCC_CR;
+__var RCC_CIR;
+__var IWDG_PR;
+__var IWDG_RLR;
+
+execUserFlashInit()
+{
+    if(__readMemory32(0x20000000,"Memory") != 0x76877697){
+        __writeMemory32(0x76371688,0x8300f050, "Memory");
+	      __writeMemory32(0x76371688,0x8300f050, "Memory");
+	      __writeMemory32(0x76371688,0x8300f050, "Memory");
+        __writeMemory32(0x76877697,0x20000000, "Memory");
+    }
+}
+
+execUserFlashExit()
+{
+
+}
+
+
+execUserReset() 
+{ 
+    __message "Executing execUserReset() function"; 
+    /* unlock memory */
+    if(__readMemory32(0x20000000,"Memory") != 0x76877697){
+        __writeMemory32(0x76371688,0x8300f050, "Memory");
+        __writeMemory32(0x76371688,0x8300f050, "Memory");
+        __writeMemory32(0x76371688,0x8300f050, "Memory");
+        __writeMemory32(0x76877697,0x20000000, "Memory");
+    }
+    __message "FINISH Executing execUserReset() function"; 
+}
+
+execUserPreload()
+{
+    if(__readMemory32(0x20000000,"Memory") != 0x76877697){
+        __writeMemory32(0x76371688,0x8300f050, "Memory");
+        __writeMemory32(0x76371688,0x8300f050, "Memory");
+        __writeMemory32(0x76371688,0x8300f050, "Memory");
+        __writeMemory32(0x76877697,0x20000000, "Memory");
+    }
+}

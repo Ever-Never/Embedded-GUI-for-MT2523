@@ -1,0 +1,142 @@
+#! armcc -E
+
+;******************************************************************************************
+;FLASH definition: 
+;    - FLASH_BASE: The flash start address.
+;    - FLASH_SIZE:  The flash physical size. Different borad may have different flash size.
+;******************************************************************************************
+#define FLASH_BASE 0x08000000
+#define FLASH_SIZE 0x00400000
+
+
+;******************************************************************************************
+;BOOTLOADER definition: 64KB BootLoader
+;    - BOOTLOADER_SIZE:   The bootloader size. This should be the real bootloader size.
+;******************************************************************************************
+#define BOOTLOADER_SIZE 0x00010000
+
+
+;******************************************************************************************
+;ROM definition: 
+;    - ROM_BASE: The rom start address. It should locate behind the bootloader.
+;    - ROM_SIZE:  The maximum rom size.
+;******************************************************************************************
+#define ROM_BASE (FLASH_BASE + BOOTLOADER_SIZE)
+#define ROM_SIZE 0x003D0000
+
+
+;******************************************************************************************
+; NVDM definition : 64KB NVDM
+;    - NVDM_RESERVED_BASE:   NVDM base address. 
+;    - NVDM_RESERVED_SIZE:   NVDM size. We will reserve a memory region for nvdm management.
+;******************************************************************************************
+#define NVDM_RESERVED_BASE 0x083E0000
+#define NVDM_RESERVED_SIZE 0x00010000
+
+;******************************************************************************************
+; EPO definition : 64K EPO
+;    - EPO_RESERVED_BASE: EPO base address
+;    - EPO_RESERVED_SIZE: EPO size. 64KB
+;******************************************************************************************
+#define EPO_RESERVED_BASE 0x083F0000
+#define EPO_RESERVED_SIZE 0x00010000
+
+;******************************************************************************************
+;PSRAM definition:  4MB RAM
+;    - RAM_BASE:   The psram start address.
+;    - VRAM_BASE:  Virtual memory start address. Virtual memory is not a physical memory.
+;                   Data/code put into virtual memory will have cachable attribute.
+;    - RAM_SIZE:    The psram physical size.
+;******************************************************************************************
+#define RAM_BASE 0x00000000
+#define VRAM_BASE 0x10000000
+#define RAM_SIZE 0x00400000
+
+
+
+;******************************************************************************************
+;TCM definition: 160KB TCM
+;    - TCM_BASE:   The TCM start address.
+;    - TCM_SIZE:    The TCM size. 
+;******************************************************************************************
+#define TCM_BASE 0x04008000
+#define TCM_SIZE 0x00020000
+
+
+;******************************************************************************************
+;STACK definition: 4KB stack size
+;    - STACK_SIZE:   Stack size. The stack is located at the end of TCM.
+;******************************************************************************************
+#define STACK_SIZE -0x1000
+
+
+
+
+ROM ROM_BASE ROM_SIZE
+{
+  TEXT ROM_BASE
+  { 
+     *.o (.reset_handler, +First)
+     *(InRoot$$Sections)
+     .ANY (+RO)
+  }
+  RAM_TEXT RAM_BASE 
+  { 
+     * (.isr_vector)
+     *(.ram_code)
+     *(.ram_rodata)
+  }
+  NONCACHED_DATA +0x0 
+  {
+     *(.noncached_rwdata)
+  }
+  NONCACHED_ZI +0x0 
+  {
+     *(.noncached_zidata)
+  }
+  CACHED_DATA +VRAM_BASE ALIGN 32  
+  { 
+     .ANY (+RW +ZI)
+  }
+  
+  ScatterAssert(ImageLimit(CACHED_DATA)  < (VRAM_BASE + RAM_SIZE))
+  
+  TCM TCM_BASE 
+  {
+        *(.tcm_code)
+        *(.tcm_rodata)
+        *(.tcm_rwdata)
+        *(.tcm_zidata)    
+  }
+  
+  STACK (TCM_BASE+TCM_SIZE) STACK_SIZE
+  {
+        *(STACK)
+  }
+}
+
+
+
+NVDM_RESERVED NVDM_RESERVED_BASE NVDM_RESERVED_SIZE
+{
+	NVDM NVDM_RESERVED_BASE EMPTY NVDM_RESERVED_SIZE
+	{
+		;reserved empty for NVDM.
+		
+		;Image$$NVDM$$ZI$$Base
+		;Image$$NVDM$$ZI$$Limit
+		;Image$$NVDM$$ZI$$Length
+	}
+}
+
+EPO_RESERVED EPO_RESERVED_BASE EPO_RESERVED_SIZE
+{
+	EPO EPO_RESERVED_BASE EMPTY EPO_RESERVED_SIZE
+	{
+		;reserved empty for EPO.
+		
+		;Image$$EPO$$ZI$$Base
+		;Image$$EPO$$ZI$$Limit
+		;Image$$EPO$$ZI$$Length
+	}
+}

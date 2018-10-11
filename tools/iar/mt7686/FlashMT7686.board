@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_board>
+  <pass>
+    <loader>$PROJ_DIR$\..\..\..\..\..\tools\iar\mt7686\FlashMT7686.flash</loader>
+  </pass>
+</flash_board>
+
+

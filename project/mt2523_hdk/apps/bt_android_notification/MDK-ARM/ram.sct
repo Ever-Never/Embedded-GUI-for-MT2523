@@ -1,0 +1,43 @@
+#! armcc -E
+
+
+;******************************************************************************************
+;PSRAM definition:  4MB RAM
+;    - RAM_BASE:   The psram start address.
+;    - RAM_SIZE:    The psram physical size.
+;******************************************************************************************
+#define RAM_BASE 0x00000000
+#define RAM_SIZE 0x00400000
+
+
+;******************************************************************************************
+;STACK definition: 4KB stack size
+;    - STACK_SIZE:   Stack size. The stack is located at the end of TCM.
+;******************************************************************************************
+#define STACK_SIZE -0x1000
+
+
+
+
+
+ROM RAM_BASE RAM_SIZE
+{
+  RAM_TEXT +0x0 
+  { 
+     * (.isr_vector, +First)
+     *.o (.reset_handler)
+     *(InRoot$$Sections)
+     .ANY (+RO)
+  }
+  DATA +0x0  
+  { 
+     .ANY (+RW +ZI)
+  }
+  
+  STACK (RAM_BASE+RAM_SIZE) EMPTY STACK_SIZE
+  {
+        ;reserved empty region for stack
+  }
+}
+
+

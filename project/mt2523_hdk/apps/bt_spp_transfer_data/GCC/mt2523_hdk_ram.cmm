@@ -1,0 +1,65 @@
+SYStem.RESet
+SYStem.CPU CORTEXM4
+sys.config memoryaccessport 3
+
+system.option enreset on
+system.option trst on
+SYStem.JtagClock 1MHz
+sys.o cflush on
+SYStem.Up
+
+setup.IMASKHLL ON
+setup.IMASKASM ON
+
+Break.Select Program OnChip
+Break.Select Hll OnChip
+Break.Select Spot OnChip
+Break.Select Read OnChip
+Break.Select Write OnChip
+
+;PND all on
+D.S SD:0xa2010320        %LE %LONG 0x00B0A700
+D.S SD:0xa2010324        %LE %LONG 0x00F9F4CF
+D.S SD:0xa2010328        %LE %LONG 0x007977DF
+D.S SD:0xA20A0020        %LE %LONG 0x000003FF
+D.S SD:0xA21D0010        %LE %LONG 0x00000744
+
+;disable watch dog
+D.S SD:0xA2050000        %LE %LONG 0x2200
+
+;EMI init
+D.S SD:0x0        %LE %LONG 0x5a5a5a5a
+D.S SD:0x4        %LE %LONG 0x5a5a5a5a
+D.S SD:0xA0050160 %LE %LONG 0x0f030000
+
+;disable boot slave
+D.S SD:0xA2110008 %LE %LONG 0x0
+
+;disable cache 
+D.S SD:0xA0880000 %LE %LONG 0x0
+
+Local &start &end
+&start=clock.seconds()
+
+&end=clock.seconds()
+Print "Elapsed time is " &end-&start    " seconds"
+
+; ===================================================================
+; Download the binary image to PSRAM directly
+; ===================================================================
+D.LOAD.ELF .\Build\iot_sdk_demo.elf  /quad
+
+R.S R13 0x04028000		; set stack pointer to the end of CM4 TCM
+R.S PC Reset_Handler	; real target bypass BROM effect
+
+;y.spath Y:\repo\bringup\gva\project\mt2523_hdk\apps\iot_sdk_dev\GCC
+
+winclear
+
+
+D.L
+
+v.watch %Hex (SCB_Type *)0xE000ED00
+v.watch %Hex (NVIC_Type *)0xE000E100
+v.watch %Hex (MPU_Type *)0xE000ED90
+

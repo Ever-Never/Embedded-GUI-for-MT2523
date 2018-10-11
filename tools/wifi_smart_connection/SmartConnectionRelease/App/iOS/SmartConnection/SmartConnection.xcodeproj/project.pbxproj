@@ -1,0 +1,364 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C208BBBF1E5D90FA008B02BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C208BBBE1E5D90FA008B02BF /* main.m */; };
+		C208BBC21E5D90FA008B02BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C208BBC11E5D90FA008B02BF /* AppDelegate.m */; };
+		C208BBC81E5D90FA008B02BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C208BBC61E5D90FA008B02BF /* Main.storyboard */; };
+		C208BBCA1E5D90FA008B02BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C208BBC91E5D90FA008B02BF /* Assets.xcassets */; };
+		C208BBCD1E5D90FA008B02BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C208BBCB1E5D90FA008B02BF /* LaunchScreen.storyboard */; };
+		C208BBDA1E5D9517008B02BF /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C208BBD91E5D9517008B02BF /* CoreFoundation.framework */; };
+		C208BBDC1E5D951D008B02BF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C208BBDB1E5D951D008B02BF /* SystemConfiguration.framework */; };
+		C208BBE11E5D9534008B02BF /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = C208BBE01E5D9534008B02BF /* ic_launcher.png */; };
+		C208BBE31E5D9575008B02BF /* SmartConnectionTableViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C208BBE21E5D9575008B02BF /* SmartConnectionTableViewController.mm */; };
+		C25DCE591E9BB17400C0F75A /* libSmartConnection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C25DCE581E9BB17400C0F75A /* libSmartConnection.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C208BBBA1E5D90FA008B02BF /* SmartConnection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartConnection.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C208BBBE1E5D90FA008B02BF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C208BBC01E5D90FA008B02BF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C208BBC11E5D90FA008B02BF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C208BBC71E5D90FA008B02BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C208BBC91E5D90FA008B02BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C208BBCC1E5D90FA008B02BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C208BBCE1E5D90FA008B02BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C208BBD41E5D933B008B02BF /* SmartConnectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartConnectionTableViewController.h; sourceTree = "<group>"; };
+		C208BBD71E5D94E3008B02BF /* elian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = elian.h; sourceTree = "<group>"; };
+		C208BBD91E5D9517008B02BF /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		C208BBDB1E5D951D008B02BF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C208BBE01E5D9534008B02BF /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_launcher.png; path = SmartConnection/resources/ic_launcher.png; sourceTree = "<group>"; };
+		C208BBE21E5D9575008B02BF /* SmartConnectionTableViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SmartConnectionTableViewController.mm; sourceTree = "<group>"; };
+		C25DCE581E9BB17400C0F75A /* libSmartConnection.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSmartConnection.a; path = SmartConnection/lib/libSmartConnection.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C208BBB71E5D90FA008B02BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C25DCE591E9BB17400C0F75A /* libSmartConnection.a in Frameworks */,
+				C208BBDC1E5D951D008B02BF /* SystemConfiguration.framework in Frameworks */,
+				C208BBDA1E5D9517008B02BF /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C208BBB11E5D90FA008B02BF = {
+			isa = PBXGroup;
+			children = (
+				C208BBDF1E5D952A008B02BF /* resource */,
+				C208BBBC1E5D90FA008B02BF /* SmartConnection */,
+				C208BBBB1E5D90FA008B02BF /* Products */,
+				C208BBD81E5D9517008B02BF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C208BBBB1E5D90FA008B02BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C208BBBA1E5D90FA008B02BF /* SmartConnection.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C208BBBC1E5D90FA008B02BF /* SmartConnection */ = {
+			isa = PBXGroup;
+			children = (
+				C208BBD71E5D94E3008B02BF /* elian.h */,
+				C208BBC01E5D90FA008B02BF /* AppDelegate.h */,
+				C208BBC11E5D90FA008B02BF /* AppDelegate.m */,
+				C208BBC61E5D90FA008B02BF /* Main.storyboard */,
+				C208BBC91E5D90FA008B02BF /* Assets.xcassets */,
+				C208BBCB1E5D90FA008B02BF /* LaunchScreen.storyboard */,
+				C208BBCE1E5D90FA008B02BF /* Info.plist */,
+				C208BBBD1E5D90FA008B02BF /* Supporting Files */,
+				C208BBD41E5D933B008B02BF /* SmartConnectionTableViewController.h */,
+				C208BBE21E5D9575008B02BF /* SmartConnectionTableViewController.mm */,
+			);
+			path = SmartConnection;
+			sourceTree = "<group>";
+		};
+		C208BBBD1E5D90FA008B02BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C208BBBE1E5D90FA008B02BF /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C208BBD81E5D9517008B02BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C25DCE581E9BB17400C0F75A /* libSmartConnection.a */,
+				C208BBDB1E5D951D008B02BF /* SystemConfiguration.framework */,
+				C208BBD91E5D9517008B02BF /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C208BBDF1E5D952A008B02BF /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				C208BBE01E5D9534008B02BF /* ic_launcher.png */,
+			);
+			name = resource;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C208BBB91E5D90FA008B02BF /* SmartConnection */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C208BBD11E5D90FA008B02BF /* Build configuration list for PBXNativeTarget "SmartConnection" */;
+			buildPhases = (
+				C208BBB61E5D90FA008B02BF /* Sources */,
+				C208BBB71E5D90FA008B02BF /* Frameworks */,
+				C208BBB81E5D90FA008B02BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartConnection;
+			productName = SmartConnection;
+			productReference = C208BBBA1E5D90FA008B02BF /* SmartConnection.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C208BBB21E5D90FA008B02BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Mediatek;
+				TargetAttributes = {
+					C208BBB91E5D90FA008B02BF = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = GG9PHQA39B;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C208BBB51E5D90FA008B02BF /* Build configuration list for PBXProject "SmartConnection" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C208BBB11E5D90FA008B02BF;
+			productRefGroup = C208BBBB1E5D90FA008B02BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C208BBB91E5D90FA008B02BF /* SmartConnection */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C208BBB81E5D90FA008B02BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C208BBCD1E5D90FA008B02BF /* LaunchScreen.storyboard in Resources */,
+				C208BBCA1E5D90FA008B02BF /* Assets.xcassets in Resources */,
+				C208BBC81E5D90FA008B02BF /* Main.storyboard in Resources */,
+				C208BBE11E5D9534008B02BF /* ic_launcher.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C208BBB61E5D90FA008B02BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C208BBC21E5D90FA008B02BF /* AppDelegate.m in Sources */,
+				C208BBE31E5D9575008B02BF /* SmartConnectionTableViewController.mm in Sources */,
+				C208BBBF1E5D90FA008B02BF /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C208BBC61E5D90FA008B02BF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C208BBC71E5D90FA008B02BF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C208BBCB1E5D90FA008B02BF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C208BBCC1E5D90FA008B02BF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C208BBCF1E5D90FA008B02BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C208BBD01E5D90FA008B02BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C208BBD21E5D90FA008B02BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GG9PHQA39B;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = SmartConnection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SmartConnection/lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mediatek.SmartConnection;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C208BBD31E5D90FA008B02BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GG9PHQA39B;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = SmartConnection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SmartConnection/lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mediatek.SmartConnection;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C208BBB51E5D90FA008B02BF /* Build configuration list for PBXProject "SmartConnection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C208BBCF1E5D90FA008B02BF /* Debug */,
+				C208BBD01E5D90FA008B02BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C208BBD11E5D90FA008B02BF /* Build configuration list for PBXNativeTarget "SmartConnection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C208BBD21E5D90FA008B02BF /* Debug */,
+				C208BBD31E5D90FA008B02BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C208BBB21E5D90FA008B02BF /* Project object */;
+}

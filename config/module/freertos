@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "Config...freertos"
+export TARGET_PATH=kernel/rtos/FreeRTOS
+export EXTRA_VAR="FREERTOS_CONFIG_PATH=$PWD/project/mt7687_hdk/apps/iot_ea1/inc"
+

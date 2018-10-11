@@ -1,0 +1,28 @@
+var group___g_a_p___l_e =
+[
+    [ "Define", "group___bluetoothhbif__gap__define.html", "group___bluetoothhbif__gap__define" ],
+    [ "Struct", "group___bluetoothhbif__gap__struct.html", "group___bluetoothhbif__gap__struct" ],
+    [ "bt_gap_le_bond", "group___g_a_p___l_e.html#gab1322a7da11150db6acf89d3443382d7", null ],
+    [ "bt_gap_le_bonding_reply", "group___g_a_p___l_e.html#gaecca4bb04842c966675e8fbd414d6a84", null ],
+    [ "bt_gap_le_cancel_connection", "group___g_a_p___l_e.html#ga92602af7574cfe8002c8204b94032dbf", null ],
+    [ "bt_gap_le_connect", "group___g_a_p___l_e.html#ga1a27ae3f33a314db4de6da3125dcf01d", null ],
+    [ "bt_gap_le_disconnect", "group___g_a_p___l_e.html#ga30d2c922a559075896771b00bd753d0d", null ],
+    [ "bt_gap_le_get_bonding_info", "group___g_a_p___l_e.html#ga4c87069eeeb8b0dcd9a1860f1dfbcbda", null ],
+    [ "bt_gap_le_get_connection_information", "group___g_a_p___l_e.html#ga38066262bbecb450906331bcb4dd937e", null ],
+    [ "bt_gap_le_get_local_config", "group___g_a_p___l_e.html#ga149cd908a12b10288c47e55f798a332a", null ],
+    [ "bt_gap_le_get_local_key", "group___g_a_p___l_e.html#ga5bb38b108da9deccb9df2ced63c2de5e", null ],
+    [ "bt_gap_le_get_pairing_config", "group___g_a_p___l_e.html#ga586fba62e0304690f98bd151fb492bf1", null ],
+    [ "bt_gap_le_get_random_address", "group___g_a_p___l_e.html#ga82158753c62fed56b0544575853fb5f9", null ],
+    [ "bt_gap_le_is_connection_update_request_accepted", "group___g_a_p___l_e.html#gadbe5d11b546c1f1732e4b195b10e8249", null ],
+    [ "bt_gap_le_read_rssi", "group___g_a_p___l_e.html#ga59ac8af87eb96bac2d37a0b0e23b689e", null ],
+    [ "bt_gap_le_set_address_resolution_enable", "group___g_a_p___l_e.html#ga7715643fc4185e7ab2a1d091d69ee70e", null ],
+    [ "bt_gap_le_set_advertising", "group___g_a_p___l_e.html#ga59499894007b03e5d17f1cc9784ad1ad", null ],
+    [ "bt_gap_le_set_random_address", "group___g_a_p___l_e.html#gaf6bd278d02c12699c54be80be054804c", null ],
+    [ "bt_gap_le_set_resolvable_private_address_timeout", "group___g_a_p___l_e.html#gaf3010df18bb2d5009474791485e5d7cb", null ],
+    [ "bt_gap_le_set_resolving_list", "group___g_a_p___l_e.html#ga6e7e65f8a2ad04fbfb9ba63cdd1e43f2", null ],
+    [ "bt_gap_le_set_scan", "group___g_a_p___l_e.html#gad01096abc2c5722047188688ff3d1631", null ],
+    [ "bt_gap_le_set_tx_power", "group___g_a_p___l_e.html#ga77b7bd1cb50e6f66e9c83733a4e51423", null ],
+    [ "bt_gap_le_set_white_list", "group___g_a_p___l_e.html#gacc9b37cec4021ddf74755fe90fdd9f36", null ],
+    [ "bt_gap_le_update_connection_parameter", "group___g_a_p___l_e.html#ga15cbc8ab44c709d08ccf4f7256f779b1", null ],
+    [ "bt_gap_le_update_data_length", "group___g_a_p___l_e.html#ga000055254d64048b93e61ccbb59669a3", null ]
+];

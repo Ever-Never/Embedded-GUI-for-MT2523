@@ -1,0 +1,41 @@
+#! armcc -E
+
+#define FLASH_BASE 0x08000000
+#define FLASH_SIZE 0x00010000
+
+;******************************************************************************************
+;TCM definition: 160KB TCM
+;    - TCM_BASE:   The TCM start address.
+;    - TCM_SIZE:    The TCM size. TCM size is 160KB
+;******************************************************************************************
+#define TCM_BASE 0x04006000
+#define TCM_SIZE 0x22000
+
+
+;******************************************************************************************
+;STACK definition: 4KB stack size
+;    - STACK_SIZE:   Stack size. The stack is located at the end of TCM.
+;******************************************************************************************
+#define STACK_SIZE -0x1000
+
+
+ROM TCM_BASE TCM_SIZE
+{
+  TEXT TCM_BASE
+  {
+     *(.reset_handler, +First)
+     *(InRoot$$Sections)
+     .ANY (+RO)
+  }
+
+  RAM +0x0
+  {
+    *(.ram_code)
+    .ANY (+RW +ZI)
+  }
+
+  STACK (TCM_BASE+TCM_SIZE) STACK_SIZE
+  {
+     *(STACK)
+  }
+}

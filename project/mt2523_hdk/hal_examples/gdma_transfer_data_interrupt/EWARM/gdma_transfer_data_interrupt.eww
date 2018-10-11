@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\gdma_transfer_data_interrupt.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\..\..\..\..\mt7687_hdk\hal_examples\gdma_transfer_data_interrupt\EWARM\gdma_transfer_data_interrupt.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\..\..\..\..\..\..\..\mp3_IAR\gva\project\mt7687_hdk\hal_examples\gdma_transfer_data_interrupt\EWARM\gdma_transfer_data_interrupt.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\..\..\pwm_generate_waveform\EWARM\pwm_generate_waveform.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\..\..\trng_generate_random_data\EWARM\trng_generate_random_data.ewp</path>
+  </project>
+  <batchBuild/>
+</workspace>
+
+

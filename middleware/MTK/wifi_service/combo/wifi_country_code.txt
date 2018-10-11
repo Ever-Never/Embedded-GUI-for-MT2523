@@ -1,0 +1,889 @@
+typedef struct {
+	uint8_t first_channel;
+	uint8_t num_of_channel;
+	uint8_t max_tx_power;			// dBm
+	uint8_t geography;			// 0:out door, 1:in door, 2:both
+	boolean dfs_req;			// Dfs require, 0: No, 1: yes.
+} wifi_channel_table_t;
+
+typedef struct {
+	uint8_t country_code[4];
+	uint8_t dfs_type;			// 0: CE, 1: FCC, 2: JAP, 3:JAP_W53, JAP_W56
+    uint8_t num_of_channel_table;
+	wifi_channel_table_t channel_table[];
+} wifi_country_code_t;
+
+
+static wifi_country_code_t wifi_country_code[] =
+{
+		{	// Antigua and Berbuda
+			"AG",
+			CE,
+            4,
+			{
+				{ 1,   13, 20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,  23, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52,  4,  23, BOTH, FALSE},	// 5G, ch 52~64
+				{ 100, 11, 30, BOTH, FALSE},	// 5G, ch 100~140
+			}
+		},
+		{	// Argentina
+			"AR",
+			CE,
+            3,
+			{
+				{ 1,   13, 20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 52,  4,  24, BOTH, FALSE},	// 5G, ch 52~64
+				{ 149, 4,  30, BOTH, FALSE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// Aruba
+			"AW",
+			CE,
+            4,
+			{
+				{ 1,   13, 20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,  23, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52,  4,  23, BOTH, FALSE},	// 5G, ch 52~64
+				{ 100, 11, 30, BOTH, FALSE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Australia
+			"AU",
+			CE,
+            4,
+			{
+				{ 1,   13, 20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,  23, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52,  4,  24, BOTH, FALSE},	// 5G, ch 52~64
+				{ 149, 5,  30, BOTH, FALSE},	// 5G, ch 149~165
+			}
+		},
+
+		{	// Austria
+			"AT",
+			CE,
+            4,
+			{
+				{ 1,   13, 20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,  23, IDOR, TRUE},		// 5G, ch 36~48
+				{ 52,  4,  23, IDOR, TRUE},		// 5G, ch 52~64
+				{ 100, 11, 30, BOTH, TRUE},		// 5G, ch 100~140
+			}
+		},
+
+		{	// Bahamas
+			"BS",
+			CE,
+            4,
+			{
+				{ 1,   13, 20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,  23, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52,  4,  24, BOTH, FALSE},	// 5G, ch 52~64
+				{ 149, 5,  30, BOTH, FALSE},	// 5G, ch 149~165
+			}
+		},
+
+		{	// Barbados
+			"BB",
+			CE,
+            4,
+			{
+				{ 1,   13, 20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,  23, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52,  4,  24, BOTH, FALSE},	// 5G, ch 52~64
+				{ 100, 11, 30, BOTH, FALSE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Bermuda
+			"BM",
+			CE,
+            4,
+			{
+				{ 1,   13, 20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,  23, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52,  4,  24, BOTH, FALSE},	// 5G, ch 52~64
+				{ 100, 11, 30, BOTH, FALSE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Brazil
+			"BR",
+			CE,
+            5,
+			{
+				{ 1,   13, 20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,  23, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52,  4,  24, BOTH, FALSE},	// 5G, ch 52~64
+				{ 100, 11, 24, BOTH, FALSE},	// 5G, ch 100~140
+				{ 149, 5,  30, BOTH, FALSE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Belgium
+			"BE",
+			CE,
+            3,
+			{
+				{ 1,   13, 20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,  18, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52,  4,  18, IDOR, FALSE},	// 5G, ch 52~64
+			}
+		},
+
+		{	// Bulgaria
+			"BG",
+			CE,
+            4,
+			{
+				{ 1,   13, 20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52,  4,  23, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11, 30, ODOR, TRUE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Canada
+			"CA",
+			CE,
+            4,
+			{
+				{ 1,   13, 20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,  23, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52,  4,  23, BOTH, FALSE},	// 5G, ch 52~64
+				{ 149, 5,  30, BOTH, FALSE},	// 5G, ch 149~165
+			}
+		},
+
+		{	// Cayman IsLands
+			"KY",
+			CE,
+            4,
+			{
+				{ 1,   13, 20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,  23, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52,  4,  24, BOTH, FALSE},	// 5G, ch 52~64
+				{ 100, 11, 30, BOTH, FALSE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Chile
+			"CL",
+			CE,
+            4,
+			{
+				{ 1,   13, 20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,  20, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52,  4,  20, BOTH, FALSE},	// 5G, ch 52~64
+				{ 149, 5,  20, BOTH, FALSE},	// 5G, ch 149~165
+			}
+		},
+
+		{	// China
+			"CN",
+			CE,
+            2,
+			{
+				{ 1,   13, 20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 149, 4,  27, BOTH, FALSE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// Colombia
+			"CO",
+			CE,
+            5,
+			{
+				{ 1,   13, 20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,  17, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52,  4,  24, BOTH, FALSE},	// 5G, ch 52~64
+				{ 100, 11, 30, BOTH, FALSE},	// 5G, ch 100~140
+				{ 149, 5,  30, BOTH, FALSE},	// 5G, ch 149~165
+			}
+		},
+
+		{	// Costa Rica
+			"CR",
+			CE,
+            4,
+			{
+				{ 1,   13, 20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,  17, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52,  4,  24, BOTH, FALSE},	// 5G, ch 52~64
+				{ 149, 4,  30, BOTH, FALSE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// Cyprus
+			"CY",
+			CE,
+            4,
+			{
+				{ 1,   13, 20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52,  4,  24, IDOR, TRUE},		// 5G, ch 52~64
+				{ 100, 11, 30, BOTH, TRUE},		// 5G, ch 100~140
+			}
+		},
+
+		{	// Czech_Republic
+			"CZ",
+			CE,
+            3,
+			{
+				{ 1,   13, 20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52,  4,  23, IDOR, TRUE},		// 5G, ch 52~64
+			}
+		},
+
+		{	// Denmark
+			"DK",
+			CE,
+            4,
+			{
+				{ 1,   13, 20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52,  4,  23, IDOR, TRUE},		// 5G, ch 52~64
+				{ 100, 11, 30, BOTH, TRUE},		// 5G, ch 100~140
+			}
+		},
+
+		{	// Dominican Republic
+			"DO",
+			CE,
+            2,
+			{
+				{ 1,   0,  20, BOTH, FALSE},	// 2.4 G, ch 0
+				{ 149, 4,  20, BOTH, FALSE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// Equador
+			"EC",
+			CE,
+            2,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 100, 11,  27, BOTH, FALSE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// El Salvador
+			"SV",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,   23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52,  4,   30, BOTH, TRUE},	// 5G, ch 52~64
+				{ 149, 4,   36, BOTH, TRUE},	// 5G, ch 149~165
+			}
+		},
+
+		{	// Finland
+			"FI",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,   23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52,  4,   23, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, BOTH, TRUE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// France
+			"FR",
+			CE,
+            3,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,   23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52,  4,   23, IDOR, TRUE},	// 5G, ch 52~64
+			}
+		},
+
+		{	// Germany
+			"DE",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,   23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52,  4,   23, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, BOTH, TRUE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Greece
+			"GR",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,   23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52,  4,   23, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, ODOR, TRUE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Guam
+			"GU",
+			CE,
+            5,
+			{
+				{ 1,   11,  20, BOTH, FALSE},	// 2.4 G, ch 1~11
+				{ 36,  4,   17, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52,  4,   24, BOTH, FALSE},	// 5G, ch 52~64
+				{ 100, 11,  30, BOTH, FALSE},	// 5G, ch 100~140
+				{ 149,  5,  30, BOTH, FALSE},	// 5G, ch 149~165
+			}
+		},
+
+		{	// Guatemala
+			"GT",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,   17, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52,  4,   24, BOTH, FALSE},	// 5G, ch 52~64
+				{ 149,  4,  30, BOTH, FALSE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// Haiti
+			"HT",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,  4,   17, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52,  4,   24, BOTH, FALSE},	// 5G, ch 52~64
+				{ 149,  4,  30, BOTH, FALSE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// Honduras
+			"HN",
+			CE,
+            2,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 149,  4,  27, BOTH, FALSE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// Hong Kong
+			"HK",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,   4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52,   4,  23, IDOR, FALSE},	// 5G, ch 52~64
+				{ 149,  4,  30, BOTH, FALSE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// Hungary
+			"HU",
+			CE,
+            3,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,   4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52,   4,  23, IDOR, TRUE},	// 5G, ch 52~64
+			}
+		},
+
+		{	// Iceland
+			"IS",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,   4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52,   4,  23, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, BOTH, TRUE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// India
+			"IN",
+			CE,
+            2,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 149, 	4,  24, IDOR, FALSE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// Indonesia
+			"ID",
+			CE,
+            2,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 149, 	4,  27, BOTH, FALSE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// Indonesia
+			"ID",
+			CE,
+            2,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 149, 	4,  27, BOTH, FALSE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// Ireland
+			"IE",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36, 	4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52, 	4,  23, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, ODOR, TRUE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Israel
+			"IL",
+			CE,
+            3,
+			{
+				{ 1,    3,  20, IDOR, FALSE},	// 2.4 G, ch 1~3
+				{ 4, 	6,  20, BOTH, FALSE},	// 2.4 G, ch 4~9
+				{ 10, 	4,  20, IDOR, FALSE},	// 2.4 G, ch 10~13
+			}
+		},
+
+		{	// Italy
+			"IT",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36, 	4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52, 	4,  23, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, ODOR, TRUE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Japan
+			"JP",
+			JAP,
+            2,
+			{
+				{ 1,   14,  20, BOTH, FALSE},	// 2.4 G, ch 1~14
+				{ 34, 	4,  23, IDOR, FALSE},	// 5G, ch 34~46
+			}
+		},
+
+		{	// Jordan
+			"JO",
+			CE,
+            3,
+			{
+				{ 1,   13,  20, IDOR, FALSE},	// 2.4 G, ch 1~13
+				{ 36, 	4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 149, 	4,  23, IDOR, FALSE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// Latvia
+			"LV",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36, 	4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52, 	4,  23, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, BOTH, TRUE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Liechtenstein
+			"LI",
+			CE,
+            3,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 52, 	4,  23, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, BOTH, TRUE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Lithuania
+			"LT",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36, 	4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52, 	4,  23, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, BOTH, TRUE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Luxemburg
+			"LU",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36, 	4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52, 	4,  23, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, BOTH, TRUE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Malaysia
+			"MY",
+			CE,
+            3,
+			{
+				{ 36, 	4,  23, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52, 	4,  23, BOTH, FALSE},	// 5G, ch 52~64
+				{ 149,  5,  20, BOTH, FALSE},	// 5G, ch 149~165
+			}
+		},
+
+		{	// Malta
+			"MT",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36, 	4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52, 	4,  23, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, BOTH, TRUE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Marocco
+			"MA",
+			CE,
+            2,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36, 	4,  24, IDOR, FALSE},	// 5G, ch 36~48
+			}
+		},
+
+		{	// Mexico
+			"MX",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36, 	4,  23, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52, 	4,  24, BOTH, FALSE},	// 5G, ch 52~64
+				{ 149,  5,  30, IDOR, FALSE},	// 5G, ch 149~165
+			}
+		},
+
+		{	// Netherlands
+			"NL",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36, 	4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52, 	4,  24, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, BOTH, TRUE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// New Zealand
+			"NZ",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36, 	4,  24, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52, 	4,  24, BOTH, FALSE},	// 5G, ch 52~64
+				{ 149,  4,  30, BOTH, FALSE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// Norway
+			"NO",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36, 	4,  24, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52, 	4,  24, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, BOTH, TRUE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// Peru
+			"PE",
+			CE,
+            2,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 149,  4,  27, BOTH, FALSE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// Portugal
+			"PT",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,   4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52,   4,  23, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, BOTH, TRUE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Poland
+			"PL",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,   4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52,   4,  23, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, BOTH, TRUE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Romania
+			"RO",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,   4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52,   4,  23, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, BOTH, TRUE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Russia
+			"RU",
+			CE,
+            2,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 149,  4,  20, IDOR, FALSE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// Saudi Arabia
+			"SA",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,   4,  23, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52,   4,  23, BOTH, FALSE},	// 5G, ch 52~64
+				{ 149,  4,  23, BOTH, FALSE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// Serbia_and_Montenegro
+			"CS",
+			CE,
+            1,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+			}
+		},
+
+		{	// Singapore
+			"SG",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,   4,  23, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52,   4,  23, BOTH, FALSE},	// 5G, ch 52~64
+				{ 149,  4,  20, BOTH, FALSE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// Slovakia
+			"SK",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,   4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52,   4,  23, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, BOTH, TRUE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Slovenia
+			"SI",
+			CE,
+            3,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,   4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52,   4,  23, IDOR, TRUE},	// 5G, ch 52~64
+			}
+		},
+
+		{	// South Africa
+			"ZA",
+			CE,
+            5,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,   4,  23, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52,   4,  23, IDOR, FALSE},	// 5G, ch 52~64
+				{ 100, 11,  30, BOTH, TRUE},	// 5G, ch 100~140
+				{ 149,  4,  30, BOTH, FALSE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// South Korea
+			"KR",
+			CE,
+            5,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,   4,  20, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52,   4,  20, BOTH, FALSE},	// 5G, ch 52~64
+				{ 100,  8,  20, BOTH, FALSE},	// 5G, ch 100~128
+				{ 149,  4,  20, BOTH, FALSE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// Spain
+			"ES",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,   4,  17, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52,   4,  23, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, BOTH, TRUE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Sweden
+			"SE",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,   4,  23, IDOR, FALSE},	// 5G, ch 36~48
+				{ 52,   4,  23, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, BOTH, TRUE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Switzerland
+			"CH",
+			CE,
+            3,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~13
+				{ 36,   4,  23, IDOR, TRUE},	// 5G, ch 36~48
+				{ 52,   4,  23, IDOR, TRUE},	// 5G, ch 52~64
+			}
+		},
+
+		{	// Taiwan
+			"TW",
+			CE,
+            2,
+			{
+				{ 1,   11,  30, BOTH, FALSE},	// 2.4 G, ch 1~11
+				{ 52,   4,  23, IDOR, FALSE},	// 5G, ch 52~64
+			}
+		},
+
+		{	// Turkey
+			"TR",
+			CE,
+            3,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~11
+				{ 36,   4,  23, BOTH, FALSE},	// 5G, ch 36~48
+				{ 52,   4,  23, BOTH, FALSE},	// 5G, ch 52~64
+			}
+		},
+
+		{	// UK
+			"GB",
+			CE,
+            4,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~11
+				{ 36,   4,  23, IDOR, FALSE},	// 5G, ch 52~64
+				{ 52,   4,  23, IDOR, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, BOTH, TRUE},	// 5G, ch 100~140
+			}
+		},
+
+		{	// Ukraine
+			"UA",
+			CE,
+            1,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~11
+			}
+		},
+
+		{	// United_Arab_Emirates
+			"AE",
+			CE,
+            1,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~11
+			}
+		},
+
+		{	// United_States
+			"US",
+			CE,
+            5,
+			{
+				{ 1,   11,  30, BOTH, FALSE},	// 2.4 G, ch 1~11
+				{ 36,   4,  17, IDOR, FALSE},	// 5G, ch 52~64
+				{ 52,   4,  24, BOTH, TRUE},	// 5G, ch 52~64
+				{ 100, 11,  30, BOTH, TRUE},	// 5G, ch 100~140
+				{ 149,  5,  30, BOTH, FALSE},	// 5G, ch 149~165
+			}
+		},
+
+		{	// Venezuela
+			"VE",
+			CE,
+            2,
+			{
+				{ 1,   13,  20, BOTH, FALSE},	// 2.4 G, ch 1~11
+				{ 149,  4,  27, BOTH, FALSE},	// 5G, ch 149~161
+			}
+		},
+
+		{	// Default
+			"",
+			CE,
+            5,
+			{
+				{ 1,   11,  20, BOTH, FALSE},	// 2.4 G, ch 1~11
+				{ 36,   4,  20, BOTH, FALSE},	// 5G, ch 52~64
+				{ 52,   4,  20, BOTH, FALSE},	// 5G, ch 52~64
+				{ 100, 11,  20, BOTH, FALSE},	// 5G, ch 100~140
+				{ 149,  5,  20, BOTH, FALSE},	// 5G, ch 149~165
+			}
+		},
+};

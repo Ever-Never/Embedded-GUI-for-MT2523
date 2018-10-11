@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_device>
+  <exe>$PROJ_DIR$\..\..\..\..\..\tools\iar\mt7687\FlashMT7687.out</exe>
+  <page>256</page>
+  <block>1024 0x1000</block>
+  <flash_base>0x10000000</flash_base>
+  <macro>$PROJ_DIR$\..\..\..\..\..\tools\iar\mt7687\FlashMT7687.mac</macro>
+  <online>1</online>
+  <aggregate>1</aggregate>  
+  <args_doc>"--skip_erase" -Don't erase blocks that read empty.</args_doc>
+</flash_device>
+
+

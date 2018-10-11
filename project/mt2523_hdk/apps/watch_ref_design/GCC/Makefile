@@ -1,0 +1,277 @@
+# Copyright Statement:
+#
+# (C) 2005-2016  MediaTek Inc. All rights reserved.
+#
+# This software/firmware and related documentation ("MediaTek Software") are
+# protected under relevant copyright laws. The information contained herein
+# is confidential and proprietary to MediaTek Inc. ("MediaTek") and/or its licensors.
+# Without the prior written permission of MediaTek and/or its licensors,
+# any reproduction, modification, use or disclosure of MediaTek Software,
+# and information contained herein, in whole or in part, shall be strictly prohibited.
+# You may only use, reproduce, modify, or distribute (as applicable) MediaTek Software
+# if you have agreed to and been bound by the applicable license agreement with
+# MediaTek ("License Agreement") and been granted explicit permission to do so within
+# the License Agreement ("Permitted User").  If you are not a Permitted User,
+# please cease any access or use of MediaTek Software immediately.
+# BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+# THAT MEDIATEK SOFTWARE RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES
+# ARE PROVIDED TO RECEIVER ON AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL
+# WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+# NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+# SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+# SUPPLIED WITH MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+# THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+# THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+# CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+# SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+# STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+# CUMULATIVE LIABILITY WITH RESPECT TO MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+# AT MEDIATEK'S OPTION, TO REVISE OR REPLACE MEDIATEK SOFTWARE AT ISSUE,
+# OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+# MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+#
+ 
+#######################################################
+# Project vairables assignment
+
+SOURCE_DIR = ../../../../..
+
+PWD= $(shell pwd)
+SDK_PATH    = $(abspath $(PWD)/$(SOURCE_DIR))
+FEATURE ?= feature.mk
+include $(FEATURE)
+# Gloabl Config
+-include $(SOURCE_DIR)/.config
+# IC Config
+-include $(SOURCE_DIR)/config/chip/$(IC_CONFIG)/chip.mk
+# Board Config
+-include $(SOURCE_DIR)/config/board/$(BOARD_CONFIG)/board.mk
+# Touch panel Config
+-include $(SOURCE_DIR)/driver/board/mt25x3_hdk/touch_panel/module.mk
+# Keypad Config
+-include $(SOURCE_DIR)/driver/board/mt25x3_hdk/keypad/module.mk
+
+DEBUG = 0
+BUILD_DIR = $(PWD)/Build
+
+# Project name
+PROJ_NAME       = $(notdir $(abspath $(dir $(PWD))))
+PROJ_PATH = $(PWD)
+OUTPATH = $(PWD)/Build
+OUTPATH_LIB = $(SOURCE_DIR)/out/mt2523_hdk/watch_ref_design/
+
+# Sources or Lib
+# RTOS source files
+include $(SOURCE_DIR)/kernel/rtos/FreeRTOS/module.mk
+
+# mems driver files
+include $(SOURCE_DIR)/driver/board/component/mems/module.mk
+include $(SOURCE_DIR)/driver/board/mt25x3_hdk/mems_init/module.mk
+
+# sensor subsys files
+include $(SOURCE_DIR)/middleware/MTK/sensor_subsys/module.mk
+include sensor_demo.mk
+
+#include gnss_demo.mk
+
+SENSOR_FUSION_ALGO = $(SOURCE_DIR)/prebuilt/middleware/MTK/fusion_algo/common/lib_core
+$(info SENSOR_FUSION_ALGO is $(SENSOR_FUSION_ALGO))
+ifeq "$(wildcard $(SENSOR_FUSION_ALGO))" ""
+    $(info No sensor fusion algorithm)
+else
+    CFLAGS += -DSENSOR_DEMO
+endif
+
+# clover driver files
+include $(SOURCE_DIR)/driver/board/component/biosensor/mt2511/src/module.mk
+
+# GNSS files
+#include $(SOURCE_DIR)/middleware/MTK/gnss/module.mk
+
+# kernel service files
+include $(SOURCE_DIR)/kernel/service/module.mk
+
+# HAL driver files
+include $(SOURCE_DIR)/driver/chip/mt2523/module.mk
+
+# NVDM files
+ifeq ($(MTK_NVDM_ENABLE), y)
+include $(SOURCE_DIR)/middleware/MTK/nvdm/module.mk
+endif
+
+# Main APP files
+APP_PATH        = $(patsubst $(SDK_PATH)/%,%,$(abspath $(dir $(PWD))))
+APP_PATH_SRC = $(APP_PATH)/src
+
+APP_FILES = $(APP_PATH)/GCC/syscalls.c
+
+APP_FILES += $(APP_PATH_SRC)/ept_gpio_var.c
+APP_FILES += $(APP_PATH_SRC)/regions_init.c 
+APP_FILES += $(APP_PATH_SRC)/ept_eint_var.c
+APP_FILES += $(APP_PATH_SRC)/sys_init.c
+APP_FILES += $(APP_PATH_SRC)/system_mt2523.c
+APP_FILES += $(APP_PATH_SRC)/task_def.c
+
+
+C_FILES += $(APP_FILES)
+C_FILES += driver/board/mt25x3_hdk/ept/src/bsp_gpio_ept_config.c
+
+#CXX_FILES for .cpp
+CXX_FILES += $(APP_PATH_SRC)/main.cpp
+
+# add startup file to build
+S_FILES += $(APP_PATH)/GCC/startup_mt2523.s
+
+###################################################
+# Location of output folders where autogenerated code from assets is placed
+CFLAGS += -I$(SOURCE_DIR)/middleware/third_party/touchgfx/inc
+CFLAGS += -I$(SOURCE_DIR)/middleware/third_party/touchgfx/inc/touchgfx
+CFLAGS += -I$(SOURCE_DIR)/middleware/third_party/touchgfx/inc/touchgfx/hal
+
+CFLAGS += -I$(SOURCE_DIR)/project/mt2523_hdk/apps/watch_ref_design/src/ui/gui/include
+CFLAGS += -I$(SOURCE_DIR)/project/mt2523_hdk/apps/watch_ref_design/src/ui/gui/include/gui/common
+CFLAGS += -I$(SOURCE_DIR)/project/mt2523_hdk/apps/watch_ref_design/src/ui/gui/include/gui/main_menu_screen
+CFLAGS += -I$(SOURCE_DIR)/project/mt2523_hdk/apps/watch_ref_design/src/ui/gui/include/gui/setting_screen
+CFLAGS += -I$(SOURCE_DIR)/project/mt2523_hdk/apps/watch_ref_design/src/ui/gui/include/gui/graph_screen
+CFLAGS += -I$(SOURCE_DIR)/project/mt2523_hdk/apps/watch_ref_design/src/ui/gui/include/gui/model
+CFLAGS += -I$(SOURCE_DIR)/project/mt2523_hdk/apps/watch_ref_design/src/ui/gui/include/gui/database
+CFLAGS += -I$(SOURCE_DIR)/$(patsubst $(SDK_PATH)/%,%,$(OUTPATH))/generated/texts/include
+CFLAGS += -I$(SOURCE_DIR)/$(patsubst $(SDK_PATH)/%,%,$(OUTPATH))/generated/images/include
+
+#middleware source
+TOUCHGFX_PATH := $(SOURCE_DIR)/middleware/third_party/touchgfx
+CXX_FILES += middleware/third_party/touchgfx/src/mt2523HAL.cpp
+CXX_FILES += middleware/third_party/touchgfx/src/OSWrappers.cpp
+CXX_FILES += middleware/third_party/touchgfx/src/mt2523DMA.cpp
+CXX_FILES += middleware/third_party/touchgfx/src/CortexMMCUInstrumentation.cpp
+CXX_FILES += middleware/third_party/touchgfx/src/GPIO.cpp
+
+CXX_FILES += kernel/service/src/new.cpp
+
+C_FILES += driver/board/mt25x3_hdk/lcd/mt25x3_hdk_lcd.c
+C_FILES += driver/board/mt25x3_hdk/backlight/mt25x3_hdk_backlight.c
+C_FILES += driver/board/component/lcm/RM69032/lcd_RM69032.c
+C_FILES += driver/board/component/lcm/ST7789H2/lcd.c
+
+#app source
+APPSRC_DIR = project/mt2523_hdk/apps/watch_ref_design/src/ui/gui/src
+CXX_FILES += $(APPSRC_DIR)/common/DemoPresenter.cpp
+CXX_FILES += $(APPSRC_DIR)/common/FrontendApplication.cpp
+CXX_FILES += $(APPSRC_DIR)/common/CommonService.cpp
+CXX_FILES += $(APPSRC_DIR)/main_menu_screen/MainMenuPresenter.cpp
+CXX_FILES += $(APPSRC_DIR)/main_menu_screen/MainMenuView.cpp
+CXX_FILES += $(APPSRC_DIR)/main_menu_screen/DotIndicator.cpp
+CXX_FILES += $(APPSRC_DIR)/main_menu_screen/SwipeContainer.cpp
+
+CXX_FILES += $(APPSRC_DIR)/setting_screen/DatePicker.cpp
+CXX_FILES += $(APPSRC_DIR)/setting_screen/MenuListElement.cpp
+CXX_FILES += $(APPSRC_DIR)/setting_screen/SetDatePresenter.cpp
+CXX_FILES += $(APPSRC_DIR)/setting_screen/SetDateView.cpp
+CXX_FILES += $(APPSRC_DIR)/setting_screen/SetHeartRatePresenter.cpp
+CXX_FILES += $(APPSRC_DIR)/setting_screen/SetHeartRateView.cpp
+CXX_FILES += $(APPSRC_DIR)/setting_screen/SetTimePresenter.cpp
+CXX_FILES += $(APPSRC_DIR)/setting_screen/SetTimeView.cpp
+CXX_FILES += $(APPSRC_DIR)/setting_screen/SettingPresenter.cpp
+CXX_FILES += $(APPSRC_DIR)/setting_screen/SettingView.cpp
+CXX_FILES += $(APPSRC_DIR)/setting_screen/TimePicker.cpp
+CXX_FILES += $(APPSRC_DIR)/setting_screen/WheelSelector.cpp
+CXX_FILES += $(APPSRC_DIR)/setting_screen/WheelSelectorExtra.cpp
+
+CXX_FILES += $(APPSRC_DIR)/graph_screen/AbstractGraph.cpp
+CXX_FILES += $(APPSRC_DIR)/graph_screen/Graph.cpp
+CXX_FILES += $(APPSRC_DIR)/graph_screen/GraphBelow.cpp
+CXX_FILES += $(APPSRC_DIR)/graph_screen/GraphDots.cpp
+CXX_FILES += $(APPSRC_DIR)/graph_screen/GraphLine.cpp
+CXX_FILES += $(APPSRC_DIR)/graph_screen/PainterColoredBitmap.cpp
+CXX_FILES += $(APPSRC_DIR)/graph_screen/PainterVerticalAlpha.cpp
+
+CXX_FILES += $(APPSRC_DIR)/model/Model.cpp
+CXX_FILES += $(APPSRC_DIR)/database/heart_rate_db.cpp
+CXX_FILES += $(APPSRC_DIR)/BoardConfiguration.cpp
+
+CXX_FILES += $(APP_PATH_SRC)/touch_adapter/mt2523TouchController.cpp
+
+include $(TOUCHGFX_PATH)/module.mk
+
+###################################################
+# convert source file to object
+C_OBJS   = $(C_FILES:%.c=$(BUILD_DIR)/%.o)
+CXX_OBJS        = $(CXX_FILES:%.cpp=$(BUILD_DIR)/%.o)
+CXX_OBJS = $(CXX_FILES:%.cpp=$(BUILD_DIR)/%.o)
+S_OBJS   = $(S_FILES:%.s=$(BUILD_DIR)/%.o)
+
+# overwrite FPUFLAGS
+FPUFLAGS = -mcpu=cortex-m4 -fsingle-precision-constant -Wdouble-promotion -mfpu=fpv4-sp-d16 -mfloat-abi=hard
+
+# add for TE enable
+ifeq ($(MTK_TE_ENABLE), y)
+CFLAGS	+= -DMTK_TE_ENABLE
+endif
+
+# LD Flags
+LDFLAGS = $(ALLFLAGS) $(FPUFLAGS) --specs=nano.specs -lnosys -nostartfiles
+LDFLAGS += -Wl,-T$(patsubst $(SDK_PATH)/%,%,$(PWD))/flash.ld -Wl,--gc-sections
+ifeq ($(DEBUG_IO), 1)
+LDFLAGS += --specs=rdimon.specs -lrdimon
+CFLAGS += -DDEBUG_IO
+endif
+#LDFLAGS = $(CFLAGS)
+
+###################################################
+# include path
+CFLAGS += -I$(SOURCE_DIR)/$(APP_PATH)/inc
+CFLAGS += -I$(SOURCE_DIR)/driver/CMSIS/Include
+CFLAGS += -I$(SOURCE_DIR)/driver/CMSIS/Device/MTK/mt2523/Include
+CFLAGS += -I$(SOURCE_DIR)/driver/chip/mt2523/inc
+CFLAGS += -I$(SOURCE_DIR)/driver/chip/inc
+CFLAGS += -I$(SOURCE_DIR)/kernel/service/inc
+CFLAGS += -I$(SOURCE_DIR)/driver/board/mt25x3_hdk/ept/inc
+CFLAGS += -I$(SOURCE_DIR)/driver/board/mt25x3_hdk/lcd
+CFLAGS += -I$(SOURCE_DIR)/driver/board/mt25x3_hdk/backlight
+ifeq ($(MTK_NVDM_ENABLE), y)
+CFLAGS += -I$(SOURCE_DIR)/middleware/MTK/nvdm/inc
+endif
+
+# CXXFLAGS for .cpp
+CXXFLAGS = $(filter-out -std=gnu99 -Wimplicit-function-declaration,$(CFLAGS))
+CXXFLAGS += -fno-rtti -fno-exceptions
+
+# Rules
+.PHONY: proj clean $(MODULE_PATH)
+
+all: proj
+	@mkdir -p $(BUILD_DIR)
+	@$(SIZE) $(OUTPATH)/$(PROJ_NAME).elf
+	@$(SOURCE_DIR)/tools/scripts/build/copy_firmware.sh $(SOURCE_DIR) $(OUTPATH) $(IC_CONFIG) $(BOARD_CONFIG) $(PROJ_NAME).bin $(PWD)
+
+MOD_EXTRA = BUILD_DIR=$(BUILD_DIR) OUTPATH=$(OUTPATH) PROJ_PATH=$(PROJ_PATH) FPUFLAGS="$(FPUFLAGS)"
+
+$(LIBS): $(MODULE_PATH)
+
+$(MODULE_PATH):
+	@+make -C $@ $(MOD_EXTRA) $($@_EXTRA)
+
+proj: $(OUTPATH)/$(PROJ_NAME).elf
+
+$(OUTPATH)/$(PROJ_NAME).elf: $(C_OBJS) $(CXX_OBJS) $(S_OBJS) $(LIBS)
+	@echo Linking...
+	@if [ -e "$@" ]; then rm -f "$@"; fi
+	@if [ -e "$(OUTPATH)/$(PROJ_NAME).map" ]; then rm -f "$(OUTPATH)/$(PROJ_NAME).map"; fi
+	@if [ -e "$(OUTPATH)/$(PROJ_NAME).dis" ]; then rm -f "$(OUTPATH)/$(PROJ_NAME).dis"; fi
+	@if [ -e "$(OUTPATH)/$(PROJ_NAME).hex" ]; then rm -f "$(OUTPATH)/$(PROJ_NAME).hex"; fi
+	@if [ -e "$(OUTPATH)/$(PROJ_NAME).bin" ]; then rm -f "$(OUTPATH)/$(PROJ_NAME).bin"; fi
+	@echo $(patsubst $(SOURCE_DIR)/%,%,$(patsubst $(SDK_PATH)/%,%, $(LDFLAGS) -Wl,--start-group $^ -Wl,--end-group -Wl,-Map=$(patsubst $(SDK_PATH)/%,%,$(OUTPATH)/$(PROJ_NAME).map) -lm -lstdc++ -o $@)) > $(OUTPATH)/link_option.tmp
+	@cd $(SOURCE_DIR) && \
+	$(patsubst $(SOURCE_DIR)/%,%,$(CC)) @$(OUTPATH)/link_option.tmp 2>>$(ERR_LOG)
+	@rm -f $(OUTPATH)/link_option.tmp
+	@$(OBJDUMP) -D $(OUTPATH)/$(PROJ_NAME).elf > $(OUTPATH)/$(PROJ_NAME).dis
+	@$(OBJCOPY) -O ihex $(OUTPATH)/$(PROJ_NAME).elf $(OUTPATH)/$(PROJ_NAME).hex
+	@$(OBJCOPY) -O binary $(OUTPATH)/$(PROJ_NAME).elf $(OUTPATH)/$(PROJ_NAME).bin
+	@echo Done
+
+include $(SOURCE_DIR)/.rule.mk
+
+clean:
+	rm -rf $(OUTPATH)
+
