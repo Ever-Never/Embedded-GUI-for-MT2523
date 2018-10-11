@@ -29,6 +29,12 @@
     cd project/mt2523_hdk/apps/gdi_display_helloworld/GCC
     make
 
+
+#### 截图
+
+![https://github.com/Ever-Never/Embedded-GUI-for-MT2523/blob/master/pics/2018-10-11%2013-08-45.png]
+
+
   SDK:https://labs.mediatek.com/zh-cn/download/Cobne0ON
 
   libaroma: https://github.com/amarullz/libaroma
