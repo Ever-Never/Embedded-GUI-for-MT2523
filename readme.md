@@ -15,14 +15,25 @@
   
 #### 内置控件列表
 
-  1. label 文本框
-  2. image 图片框,支持帧动画
-  3. progress 进度条,长方形和圆形进度条,loading.
-  4. viewpager.
-  5. listview 列表.
-  6. fragment.
-  7. scroller.
-  8. qrcode 二维码
+  1. label 文本框。
+  2. image 图片框,支持帧动画。
+  3. progress 进度条,长方形和圆形进度条,loading。
+  4. viewpager。
+  5. listview 列表。
+  6. fragment。
+  7. scroller。
+  8. qrcode 二维码。
+  9. button。
+  
+#### Features 
+
+  1. Lua脚本引擎支持，可以通过脚本自定义绘制流程。
+  2. svg png jpeg decode。
+  3. Freetype字体引擎，支持emoji字体，混合排版，加粗，下划线，居中方式。
+  4. 基本的绘制能力，方块、原形、椭圆、点、折线、直线、贴图。
+  5. 模拟器支持，底层通多SDL实现。
+
+ 
   
 #### build
 
